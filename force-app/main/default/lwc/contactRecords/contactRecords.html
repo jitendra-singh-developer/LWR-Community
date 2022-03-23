@@ -1,0 +1,24 @@
+<template  >
+
+    <lightning-card>
+        <lightning-combobox
+        label="Status"
+        placeholder="Select Progress"
+        options={options}
+        onchange={handleChange} ></lightning-combobox>
+
+<p>Selected value is: {value}</p>
+        <br/>
+        
+
+             
+                <lightning-datatable
+                        key-field="id"
+                        data={contactList}
+                        columns={columns}>
+                </lightning-datatable>
+                     
+
+    </lightning-card>
+  
+</template>

@@ -1,0 +1,36 @@
+<apex:page controller="SendEmailContactController" >
+    <apex:form >
+        <apex:pageMessages />
+        <apex:actionFunction action="{!fetchEmail}" reRender="emailId" name="fetchEmail" status="fatchingMail" >
+        <apex:param assignTo="{!checkedContactId}"  name="checkedContactId" value="" />
+            <apex:param assignTo="{!isContactId}"  name="isContactId" value="" />
+        </apex:actionFunction>
+    	<apex:pageBlock >
+        		<apex:pageBlockSection columns="2" >
+                     Email Addresses :<apex:outputPanel >
+                    <apex:inputText value="{!emailAddress}" id="emailId" style="width:400px" /><apex:actionStatus startText="FetchingEmail.....!!!" id="fatchingMail" ></apex:actionStatus>
+                    </apex:outputPanel>
+                     Subject : <apex:outputPanel >
+                     <apex:inputText value="{!emailSubject}" style="width:400px" />
+                    </apex:outputPanel>
+                     Body : <apex:outputPanel >
+                      <apex:inputTextarea value="{!Body}" style="width:400px; height:100px" />
+                    </apex:outputPanel>
+                     
+            		           
+                   
+                    
+            	</apex:pageBlockSection>
+            <apex:commandButton value="Sent Email" action="{!sendEmail}" />
+        </apex:pageBlock>
+        <apex:pageBlock >
+				<apex:pageBlockTable value="{!contactModels}" var="cont" >
+                    <apex:column headerValue="Select" >	<apex:inputCheckbox value="{!cont.ischecked}" onchange="fetchEmail('{!cont.con.Id}','{!cont.ischecked}');" /> </apex:column>
+                    <apex:column headerValue="Name"  value="{!cont.con.Name}" />
+                     <apex:column headerValue="Email" value="{!cont.con.Email}" />
+            		 <apex:column headerValue="Phone" value="{!cont.con.Phone}" />	
+                   
+            	</apex:pageBlockTable>        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

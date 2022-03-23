@@ -1,0 +1,20 @@
+<apex:page controller="AccountListUsingList" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!accounts}" var="act" >
+            	<apex:column value="{!act.Phone}" />
+          		 <apex:column value="{!act.Name}" />
+          
+                <apex:column value="{!act.Rating}" />
+                <apex:column value="{!act.Fax}" />
+            </apex:pageBlockTable>
+                <apex:pageBlockButtons >
+                <apex:commandButton action="/apex/Demo2" value="Edit" />
+                <apex:commandButton action="/apex/Demo" value="Delete"/>
+                <apex:commandButton action="/apex/StudentList" value="Sharing" />
+                <apex:commandButton action="/apex/StudentList2" value="Include Offline" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

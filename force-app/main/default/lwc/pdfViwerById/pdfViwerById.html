@@ -1,0 +1,14 @@
+<template>
+    <template if:true={fileId}>
+        <iframe src={url}></iframe>
+    </template>
+    
+    <template if:true={showModal}>
+  
+            <iframe id="pdfFrame" src="/resource/pdfjs/web/viewer.html" width="100%" height="600" class="pdfFrame" ></iframe>
+       
+    </template>
+    <template if:false={fileId}>
+        Please enter a valid PDF File ID.
+    </template>
+</template>

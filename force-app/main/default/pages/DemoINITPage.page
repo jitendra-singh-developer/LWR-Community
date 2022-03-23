@@ -1,0 +1,9 @@
+<apex:page controller="testComponentController" >
+   <apex:form rendered="{!!isTrue}">
+        <apex:actionFunction action="{!init}" name="init"/>
+        Show the value of I = {!temp}
+    </apex:form>
+    <script>
+    init();
+    </script>
+</apex:page>

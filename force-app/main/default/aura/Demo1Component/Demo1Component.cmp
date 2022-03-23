@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="myMap" type="Map" />
+    
+    <lightning:button label="Create Map" variant="Brand" onclick="{!c.doCreateMap}" />
+    <aura:iteration var="item" items="{!v.myMap}" >
+        This is key {!item.key} and this is value {!item.value} <br/>
+    
+    </aura:iteration>
+ 	 
+</aura:component>

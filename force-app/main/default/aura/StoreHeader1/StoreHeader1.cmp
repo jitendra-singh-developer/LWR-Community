@@ -1,0 +1,4 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout" >
+	Connect 
+    <c:B2C1 />
+</aura:component>

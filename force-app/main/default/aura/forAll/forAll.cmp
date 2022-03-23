@@ -1,0 +1,15 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,forceCommunity:themeLayout" access="global">
+    <aura:attribute name="greeting" type="String" default="Hello" access="global" />
+    <aura:attribute name="subject" type="String" default="World" access="global" />
+	<aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="SearchString" type="String" default="{!SearchString}" access="global"/>
+     <aura:attribute name="first" type="String" default="{!first}" access="global"/>
+ <aura:attribute name="isValid" type="String" default="false" access="global"/>
+    <div style="box">
+      <span class="greeting">{!v.first}</span>, {!v.subject}!
+    </div>
+    <div>
+     {!v.search}
+    </div>
+    
+</aura:component>

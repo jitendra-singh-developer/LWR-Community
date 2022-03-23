@@ -1,0 +1,42 @@
+<apex:page controller="StudetnSearchingController"  >
+    <apex:form >
+         <apex:pageMessages />
+		<apex:pageBlock >
+			            
+            First Name : <apex:inputText value="{!firstName}" />
+        
+            Condition :<apex:selectList multiselect="false" size="1" value="{!condition}" required="false" >
+                   <apex:selectOption itemLabel="AND" itemValue="AND"/>
+                   <apex:selectOption itemLabel="OR" itemValue="OR"/>
+            		  </apex:selectList> 
+            Operator :<apex:selectList multiselect="false" size="1" value="{!Operator}" required="false" >
+                   <apex:selectOption itemLabel="=" itemValue="="/>
+                   <apex:selectOption itemLabel=">" itemValue=">"/>
+                   <apex:selectOption itemLabel="<" itemValue="<"/>
+                   <apex:selectOption itemLabel=">=" itemValue=">="/>
+                   <apex:selectOption itemLabel="<=" itemValue="<="/>
+            	    <apex:selectOption itemLabel="<>" itemValue="<>"/>
+            </apex:selectList> Date of Birth :<apex:inputField value="{!don.Date_of_Birth__c}" />
+            
+        <apex:commandButton value="Search" action="{!mySearch}" />
+        	<apex:pageBlockTable value="{!students}" var="stu" >
+                
+                <apex:column headerValue="First Name" ><apex:inputField value="{!stu.First_Name__c}" /></apex:column>
+                <apex:column headerValue="Last Name" ><apex:inputField value="{!stu.Last_Name__c}"/></apex:column>
+                <apex:column headerValue="Date of Birth" ><apex:inputField value="{!stu.Date_of_Birth__c}" /></apex:column>
+                <apex:column headerValue="Email" ><apex:inputField value="{!stu.Email__c}"  /></apex:column>
+                <apex:column headerValue="Have Vahicle"><apex:inputField value="{!stu.HaveWahicle__c}" /></apex:column>
+                <apex:column headerValue="Sex" ><apex:inputField value="{!stu.Sex__c}" /></apex:column>
+                <apex:column headerValue="Class" ><apex:inputField value="{!stu.Class__c}" /></apex:column>
+      
+
+            </apex:pageBlockTable>
+                       <apex:commandButton action="{!mySave}" value="Save" />
+            
+
+            
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

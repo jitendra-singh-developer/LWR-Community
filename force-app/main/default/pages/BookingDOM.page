@@ -1,0 +1,29 @@
+<apex:page title="Booking" Controller="BookingDomController">
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="Booking detail">
+            
+            <apex:pageBlockSection >
+                
+                <apex:inputField value="{!Book.Customer__c}" />
+                <apex:inputField value="{!Book.Room_No__c}" />
+                <apex:inputField value="{!Book.Status__c}" />
+                <apex:inputField value="{!Book.Check_In_Time__c}" />
+                <apex:inputField value="{!Book.Check_out_Time__c}" />
+                <apex:inputField value="{!Book.Name}" />
+               
+                
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!quicksave}" value="Quick Save"/>
+                  <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!saveNew}" value="Save & New"/>
+                <apex:commandButton immediate="true" action="/apex/BookingDomList" value="View Booking List"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

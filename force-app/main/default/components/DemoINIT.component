@@ -1,0 +1,9 @@
+<apex:component controller="testComponentController">
+    <apex:form rendered="true">
+        <apex:actionFunction action="{!init}" name="init"/>
+        Show the value of I = {!i}
+    </apex:form>
+    <script>
+    init();
+    </script>
+</apex:component>

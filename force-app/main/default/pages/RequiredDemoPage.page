@@ -1,0 +1,17 @@
+<apex:page standardController="Account" lightningStylesheets="true">
+<apex:form >
+ <apex:pageBlock >
+   <apex:pageBlockSection title="Account Information">
+    <apex:inputfield value="{!account.Name}"/>
+    
+    <apex:inputField value="{!account.AccountNumber}"/>    
+       <apex:inputfield value="{!account.AccountNumber}" required="true"/>
+    
+   </apex:pageBlockSection>
+ <apex:pageblockButtons >
+  
+<apex:commandButton value="Save" action="{!save}"/>  
+  </apex:pageblockButtons>
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page controller="ChildParentDetailController" >
+    <apex:pageBlock >
+        <c:ChildParentDetailController />
+    </apex:pageBlock>
+</apex:page>

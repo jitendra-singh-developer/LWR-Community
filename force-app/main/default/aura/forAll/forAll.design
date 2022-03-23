@@ -1,0 +1,6 @@
+<design:component>
+  <design:attribute name="SearchString" label="Search" datasource="value1,value2,value3" description="Please add Search merge variable" />
+  <design:attribute name="isValid" label="Valid" datasource="true,false" description="Checkbox" />
+   <design:attribute name="first" label="First" datasource="value1,value2,value3" description="Please add Search merge variable" />
+    
+</design:component>

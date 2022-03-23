@@ -1,0 +1,125 @@
+<template>
+    <lightning-card>
+        <lightning-button variant="brand"
+           label="Codes Update"
+           title="Codes Update"
+           onclick={openModal}
+           class="slds-m-left_x-small">
+        </lightning-button>
+        </lightning-card>
+        <template if:true={selectObject}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="Medium" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </header>
+                  
+                   <lightning-card>
+                   <template if:true={isShowCombobox}> <lightning-combobox
+                        value={value}
+                        placeholder="Select Object"
+                        options={options}
+                        onchange={handleChange}
+                    ></lightning-combobox>
+                    </template>
+
+                    <template if:true={isShowRecords}> 
+                         <lightning-datatable
+                        key-field="id"
+                        data = {objectRecordList}
+                        columns={columns}
+                        onrowselection={getSelectedRecords}>
+                        </lightning-datatable>
+                   
+                </template>
+                <template if:true={isCodeUpdateModelOpen} >
+                    
+                        <div style="font-Size:25px;margin-left:20px">Section A</div><br/>
+                        <div class="slds-grid slds-gutters">
+                    
+                            <div class="slds-col">
+                                <div class="labelStyle" >Code 1</div>
+                                <div class="labelStyle">Code 2</div>
+                                <div class="labelStyle">Code 3</div>
+                                <div class="labelStyle">Code 4</div>
+                            </div>
+                            <div class="slds-col" style="margin-top:-15px">
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code 1" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionABoxList}>
+                                    </lightning-combobox>
+                                </div>
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code 2" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionABoxList}>
+                                    </lightning-combobox>
+                                </div>
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code 3" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionABoxList}>
+                                    </lightning-combobox>
+                                </div>
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code 4" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionABoxList}>
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div style="font-Size:25px;margin-left:20px">Section B</div><br/>
+                        <div class="slds-grid slds-gutters">
+                    
+                            <div class="slds-col">
+                                <div class="labelStyle">Code 1</div>
+                                <div class="labelStyle">Code 2</div>
+                                <div class="labelStyle">Code 3</div>
+                                <div class="labelStyle">Code 4</div>
+                            </div>
+                            <div class="slds-col" style="margin-top:-15px">
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code1 1" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionBBoxList}>
+                                    </lightning-combobox>
+                                </div>
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code1 2" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionBBoxList}>
+                                    </lightning-combobox>
+                                </div>
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code1 3" onchange={getData} value={sectionValue} placeholder="Select Code" options={sectionBBoxList}>
+                                    </lightning-combobox>
+                                </div>
+                                <div>
+                                    <lightning-combobox style="width:150px;height:50px" title="Code1 4" onchange={getData}  value={sectionValue} placeholder="Select Code" options={sectionBBoxList}>
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+                        </div>            
+            </template> 
+        </lightning-card>
+                <template if:true={isShowCombobox}>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_brand"  onclick={closeModal} title="Cancel">Cancel</button>
+                        <button class="slds-button slds-button_brand" disabled={isNextDisable} onclick={nextProcess} title="Next">Next</button>
+                    </footer>
+                </template>
+
+                <template if:true={isShowRecords}>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_brand"  onclick={recordBackButton} title="Back">Back</button>
+                        <button class="slds-button slds-button_brand" disabled={isRecordNextButtonDisable} onclick={showCodeUpdateModel} title="Next">Next</button>
+                    </footer>
+                </template> 
+                <template if:true={isCodeUpdateModelOpen}>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_brand" onclick={codeUpdateBackButton}  title="Back">Back</button>
+                        <button class="slds-button slds-button_brand" disabled={isCodeUpdateButtonDisable} onclick={updateCodes} title="Next">Update Code</button>
+                    </footer>
+                </template> 
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+</template>

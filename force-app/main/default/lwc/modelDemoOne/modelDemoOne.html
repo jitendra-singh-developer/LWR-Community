@@ -1,0 +1,235 @@
+<template>
+    <!-- lightning button for open modal window -->
+    <lightning-button variant="brand" label="Use Part Salection Wizard" title="Use Part Salection Wizard"
+        onclick={openModal} class="slds-m-left_x-small">
+    </lightning-button>
+    <!--Use template if:true to display/hide popup based on isModalOpen value-->
+     <template if:true={isPartCasualModelOpen}>
+                                        <!-- Modal/Popup Box LWC starts here -->
+                                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                                            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                            <div class="slds-modal__container">
+                                                <!-- Modal/Popup Box LWC header here -->
+                                                <header class="slds-modal__header">
+                                                    <div class="demo-only" style="padding:0.5rem;background:#16325c">
+                                                        <div class="slds-text-color_inverse slds-text-align_left">Part Selection Wizard.</div>
+                                                    </div>
+                                                </header>
+                                                <!-- Modal/Popup Box LWC body starts here -->
+                                                <div class="slds-modal__content slds-p-around_medium" title="Choose Application Type"
+                                                   >
+                                                    <lightning-progress-indicator current-step={currentStep} type="base" variant="base">
+                                                      <lightning-progress-step label="Step 1" value="1" onclick={handleOnStepClick} >
+                                                     
+                                                        </lightning-progress-step>
+                                                        <lightning-progress-step label="Step 2" value="2" onclick={handleOnStepClick}>
+                                                       
+                                                        </lightning-progress-step>
+                                                        <lightning-progress-step label="Step 3" value="3" onclick={handleOnStepClick}>
+                                                     
+                                                        </lightning-progress-step>
+                                                        <lightning-progress-step label="Step 4" value="4" onclick={handleOnStepClick}>
+                                                    
+                                                        </lightning-progress-step>
+                                                    </lightning-progress-indicator>
+                                
+                                                   
+                                                    <template if:true={isStepOne}>
+                                                        <div class="slds-text-font_monospace">Choose Application Type</div>
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox"  >
+                                                                        <p>Image 1</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 2</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 3</p>
+                                                                    </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox" >
+                                                                        <p>Image 4</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                
+                                                    <template if:true={isStepTwo}>
+                                                        <div class="slds-text-font_monospace">Product Type</div>
+                                                       
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col slds-order_1">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox"  >
+                                                                        <p>Image 1</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_2">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 2</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_3">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 3</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col slds-order_1">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 4</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_2">
+                                                                <lightning-card>
+                                                                    <div class="slds-box  partBox" >
+                                                                        <p>Image 5</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_3">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox" >
+                                                                        <p>Image 6</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                    
+                                                    <template if:true={isStepThree}>
+                                                        <div class="slds-text-font_monospace">Customer Materials</div>
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col slds-order_1">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox"  >
+                                                                        <p>Image 1</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_2">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 2</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_3">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 3</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col slds-order_1">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 4</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_2">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox" >
+                                                                        <p>Image 5</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_3">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox" >
+                                                                        <p>Image 6</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                    <template if:true={isStepFour}>
+                                                        <div class="slds-text-font_monospace">Items/Varient</div>
+                                                     
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col slds-order_1">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox"  >
+                                                                        <p>Image 1</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_2">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 2</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_3">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 3</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-grid slds-gutters">
+                                                            <div class="slds-col slds-order_1">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox">
+                                                                        <p>Image 4</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_2">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox" >
+                                                                        <p>Image 5</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                            <div class="slds-col slds-order_3">
+                                                                <lightning-card>
+                                                                    <div class="slds-box partBox" >
+                                                                        <p>Image 6</p>
+                                                                        </div>
+                                                                </lightning-card>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                
+                                                    
+                                                    <button class="slds-button slds-button_neutral slds-text-align_center" onclick={isPartCasualModelOpen}
+                                                    title="Cancel">Cancel</button>
+                                                </div>
+                                                <!-- Modal/Popup Box LWC footer starts here -->
+                                               
+                                            </div>
+                                        </section>
+                                        <div class="slds-backdrop slds-backdrop_open"></div>
+                                    </template>
+
+</template>

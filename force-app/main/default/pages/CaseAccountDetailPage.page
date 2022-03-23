@@ -1,0 +1,11 @@
+<apex:page controller="CaseAccountDetailController" >
+    <apex:pageBlock >
+			<apex:pageBlockSection title="Case Detail">
+        		<apex:outputField value="{!cases.Status}" />
+                <apex:outputField value="{!cases.Product__c}" />
+                <apex:outputField value="{!cases.Type}" />
+        	</apex:pageBlockSection>
+        	<c:AccountDetailComponent objectName="{!cases.AccountId}" />
+    
+    </apex:pageBlock>
+</apex:page>

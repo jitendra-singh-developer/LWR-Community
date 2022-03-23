@@ -1,0 +1,53 @@
+<apex:page title="Booking Multiple" controller="BookingDomController2">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Booking One" >
+                <apex:inputField value="{!Book.Customer__c}"  />
+                <apex:inputField value="{!Book.Room_No__c}" />
+                <apex:inputField value="{!Book.Status__c}" />
+                <apex:inputField value="{!Book.Check_In_Time__c}" />
+                <apex:inputField value="{!Book.Check_out_Time__c}" />
+                <apex:inputField value="{!Book.Name}" />
+                
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Booking Two" >
+                <apex:inputField value="{!Book1.Customer__c}" />
+                <apex:inputField value="{!Book1.Room_No__c}" />
+                <apex:inputField value="{!Book1.Status__c}" />
+                <apex:inputField value="{!Book1.Check_In_Time__c}" />
+                <apex:inputField value="{!Book1.Check_out_Time__c}" />
+                <apex:inputField value="{!Book1.Name}" />
+                
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Booking Three" >
+                <apex:inputField value="{!Book2.Customer__c}" />
+                <apex:inputField value="{!Book2.Room_No__c}" />
+                <apex:inputField value="{!Book2.Status__c}" />
+                <apex:inputField value="{!Book2.Check_In_Time__c}" />
+                <apex:inputField value="{!Book2.Check_out_Time__c}" />
+                <apex:inputField value="{!Book2.Name}" />
+                
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+        <apex:pageBlock >
+        
+      
+            
+            <apex:commandButton action="{!save}" value="Save" />
+            
+            
+       
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

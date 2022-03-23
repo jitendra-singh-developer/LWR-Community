@@ -1,0 +1,44 @@
+<apex:page Controller="ContactFieldController" title="Contact" contentType="{! renderedContentType }" renderAs="{! renderingService }"  >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:repeat value="{!$ObjectType.Contact.FieldSets.ContactSet}"  var="t">
+                    <apex:inputField value="{!contacts[t]}" />
+                    
+                </apex:repeat>
+                
+            </apex:pageBlockSection>
+			
+            <apex:pageBlockButtons >
+                  <apex:commandButton value="QuickSave"  action="{!quickSave}" />
+                <apex:commandButton value="Save" action="{!save}" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form rendered="{! renderingService != 'PDF' }"
+               style="text-align: right; margin: 10px;">
+        <apex:commandLink action="{! saveToPdf }" value="Save to PDF">
+            <apex:param assignTo="{! renderedFileName }" value="Contact-List1.pdf"/>
+        </apex:commandLink>
+        <hr/>
+    </apex:form>
+      
+    contentType: <apex:outputText value=" {! renderedContentType }"/><br/>
+    renderingService: <apex:outputText value=" {! renderingService }"/><br/>
+    <apex:pageBlock >
+        <apex:pageBlockSection columns="1" title="Contact">
+            
+            <apex:pageBlockTable value="{!contactList}" var="con">
+                <apex:repeat value="{!$ObjectType.Contact.FieldSets.ContactSet}" var="set" >
+                    <apex:column value="{!con[set]}" />
+                    
+                </apex:repeat>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+      
+    </apex:pageBlock>
+    
+    
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="Student__c" recordSetVar="Students">
+ 
+    
+    	<apex:pageBlock >
+        	<apex:dataList value="{!Students}" var="con" type="square">
+                <apex:outputText value="{!con.First_Name__c}" />          
+            </apex:dataList>
+            
+        
+        
+			
+            
+            
+        </apex:pageBlock>
+    
+    	
+    
+    	
+    
+    
+</apex:page>

@@ -1,0 +1,17 @@
+<template>
+   
+   <lightning-button variant="brand" label="Save" title="Looks like a link" onclick={save} class="slds-m-left_x-small"></lightning-button>
+   <lightning-card   if:true={isTrue}  >
+       
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-3">
+         
+          <span><img src={imageUrl} height="1000px" width="800px" /></span>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+           
+            <span><b>Detail</b> : {detail} </span>
+        </div>
+      </div>
+   </lightning-card> 
+</template>

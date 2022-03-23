@@ -1,0 +1,12 @@
+.header {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: #08c708 !important;
+    width: 300px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.header1 {
+    background-color: #962807 !important;
+}

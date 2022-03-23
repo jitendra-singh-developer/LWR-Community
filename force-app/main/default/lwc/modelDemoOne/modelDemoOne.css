@@ -1,0 +1,20 @@
+.boxBorder{
+      
+        border: 3px solid red;
+   
+}
+
+.boxPadding{
+    padding: 3rem;
+}
+
+.partBox{
+    height: 15rem;
+    width: 20rem;
+
+}
+
+.slds-modal__container {
+    max-width: 80rem !important;
+    width: 80% !important;
+}

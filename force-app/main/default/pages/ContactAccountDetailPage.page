@@ -1,0 +1,10 @@
+<apex:page controller="ContactAccountDetailController" >
+    <apex:pageBlock >
+    	<apex:pageBlockSection title="Contact Detail">
+            <apex:outputField value="{!contactObj.Name}" />
+            <apex:outputField value="{!contactObj.Email}" />
+            <apex:outputField value="{!contactObj.Phone}" />
+        </apex:pageBlockSection>
+        <c:AccountDetailComponent objectName="{!contactObj.AccountId}" />
+    </apex:pageBlock>
+</apex:page>

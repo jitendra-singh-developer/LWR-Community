@@ -1,0 +1,44 @@
+<apex:component controller="AccountContactDetailController"  >
+    
+    <apex:attribute name="objectName" description="" type="String" />
+    <apex:pageBlock id="tab" >
+    <apex:pageBlockSection title="Account List" columns="1" rendered="{!objectName == 'Account'}"  >
+        <apex:pageBlockTable value="{!leAccountList}" var="acc" rows="{!rowSize}" first="{!controller}"   >
+            
+            <apex:column headerValue="Sr.No" ><apex:outputText value="{!acc.srNon}" /></apex:column>
+            <apex:column value="{!acc.accountObj.Name}" />
+            <apex:column value="{!acc.accountObj.Email__c}" />
+            <apex:column value="{!acc.accountObj.Phone}" />
+            
+        </apex:pageBlockTable>
+        
+        
+    </apex:pageBlockSection>
+    
+    
+    <apex:pageBlockSection title="Contact List" columns="1" rendered="{!objectName == 'Contact'}" >
+        
+        <apex:pageBlockTable value="{!leContactList}" var="con"  >
+            <apex:column headerValue="Sr.No" ><apex:outputText value="{!con.srNon}" /></apex:column>
+            <apex:column value="{!con.contactObj.Name}" />
+            <apex:column value="{!con.contactObj.Email}" />
+            <apex:column value="{!con.contactObj.Phone}" />
+            
+        </apex:pageBlockTable>
+       
+        
+        
+    </apex:pageBlockSection>
+    
+     <apex:pageBlockButtons >
+         <apex:commandButton value="First" reRender="tab" action="{!first}" />
+         <apex:commandButton value="Previous"  reRender="tab" action="{!previous}" />
+        	<apex:commandButton value="Next" reRender="tab" action="{!next}" />
+         <apex:commandButton value="Last" reRender="tab" action="{!last}" />
+     </apex:pageBlockButtons>
+        </apex:pageBlock>
+    
+    
+    
+    
+</apex:component>

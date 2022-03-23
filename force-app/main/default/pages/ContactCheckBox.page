@@ -1,0 +1,91 @@
+<apex:page controller="ContactCheckBoxController" >
+    <apex:pageMessages />
+    <apex:form id="clone"  >
+        
+        <apex:pageBlock rendered="{!cloneB}" >
+            
+            <apex:pageBlockSection columns="2"   >
+                
+                <apex:inputField value="{!cloneInsert.FirstName}"   />
+                <apex:inputField value="{!cloneInsert.LastName}"   />
+                <apex:inputField value="{!cloneInsert.Email}"   />
+                <apex:inputField value="{!cloneInsert.Phone}"   />
+                <apex:inputField value="{!cloneInsert.BirthDate}"   />
+                <apex:inputField value="{!cloneInsert.Experience__c}" />
+                <apex:inputField value="{!cloneInsert.Sub__c}" />
+                
+                
+            </apex:pageBlockSection>
+            <apex:commandButton value="Save" action="{!cloneSave}" />
+            <apex:commandButton action="{!cancelfun}" value="Cancel" />
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form id="frm">
+        <apex:actionFunction reRender="frm" name="editableRow" />
+        <apex:actionFunction action="{!multiSelect}" reRender="selectAll" name="multiSelect"  />
+        <apex:actionFunction action="{!cloneRecord}"  reRender="clone" name="cloneRecord" >
+            <apex:param assignTo="{!cloneId}" name="cloneId" value="" />
+        </apex:actionFunction>   
+        
+        <apex:actionFunction action="{!selectedData}" reRender="frm" name="selectedData" >
+            <apex:param assignTo="{!ontactID}" name="contactId" value="" />
+        </apex:actionFunction>
+        
+        <apex:pageBlock id="selectAll">
+            
+            <apex:pageBlockTable value="{!contactCheckBoxModels}" var="cn">
+                <apex:column headerValue="Sr.No." value="{!cn.srNum}" />
+                
+                <apex:column headerValue="Action" ><apex:commandLink value="Clone" reRender="none" onclick="cloneRecord('{!cn.con.Id}');"  /> | <apex:commandLink value=" Delete" reRender="none" onclick="selectedData('{!cn.con.Id}');" /> </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox value="{!isck}"  onchange="multiSelect();" />
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!cn.ischecked}" onclick="editableRow();" />
+                </apex:column>
+                
+                <apex:column headerValue="First Name " >
+                    
+                    <apex:outputText value="{!cn.con.FirstName}" rendered="{!!cn.ischecked}" />
+                    <apex:inputText value="{!cn.con.FirstName}" rendered="{!cn.ischecked}"  /> 
+                </apex:column>
+                <apex:column headerValue="Last Name" >
+                    
+                    <apex:outputText value="{!cn.con.LastName}" rendered="{!!cn.ischecked}" />
+                    <apex:inputText value="{!cn.con.LastName}" rendered="{!cn.ischecked}"  /> 
+                </apex:column>
+                <apex:column headerValue="Email" >
+                    <apex:outputText value="{!cn.con.Email}"  rendered="{!!cn.ischecked}"/>
+                    <apex:inputField value="{!cn.con.Email}" rendered="{!cn.ischecked}"  />
+                </apex:column>
+                <apex:column headerValue="Phone"  >
+                    <apex:outputText value="{!cn.con.Phone}" rendered="{!!cn.ischecked}" /> 
+                    <apex:inputField value="{!cn.con.Phone}" rendered="{!cn.ischecked}"  />
+                </apex:column>
+                <apex:column headerValue="Date of Birth"   >
+                    <apex:outputText value="{!cn.con.BirthDate}" rendered="{!!cn.ischecked}" />
+                    <apex:inputField value="{!cn.con.BirthDate}" rendered="{!cn.ischecked}"  />
+                </apex:column>
+            <!---    <apex:column headerValue="Experience"   >
+                    <apex:outputText value="{!cn.con.Experience__c}" rendered="{!!cn.ischecked}" />
+                    <apex:inputField value="{!cn.con.Experience__c}" rendered="{!cn.ischecked}"  />
+                </apex:column>
+                <apex:column headerValue="Subject"   >
+                    <apex:outputText value="{!cn.con.Sub__c}" rendered="{!!cn.ischecked}" />
+                    <apex:inputField value="{!cn.con.Sub__c}" rendered="{!cn.ischecked}"  />
+                </apex:column> --->
+                
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Delete" action="{!deletefun}" />
+                <apex:commandButton value="Cancel" action="{!cancelfun}" />
+                <apex:commandButton value="Next" action="{!next}" />
+                <apex:commandButton value="Last" action="{!last}" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page controller="AccountContactV2Controller">
+    <apex:form >
+    	<apex:pageBlock >
+           
+        	<apex:pageBlockTable value="{!accountContactList}" var="acc">
+            	 	<apex:column value="{!acc.accounts.Name}" />
+                <apex:column headerValue="Number of Contact" ><apex:outputText value="{!acc.num}" /></apex:column>
+            
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

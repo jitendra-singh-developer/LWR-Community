@@ -1,0 +1,43 @@
+<apex:page standardController="Account" extensions="AccountAddRemoveContactController" >
+    <apex:form >
+        <apex:actionFunction name="makeTrue" action="{!makeTrue}" reRender="from2" />
+        <apex:actionFunction name="makeTrueCon" action="{!makeTrueCon}" reRender="from2" />
+        
+        <apex:pageBlock id="from2" >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!contactmodelList}" var="con" title="Related Contact">
+                    <apex:column headerValue="Sr.No" value="{!con.indNum}" />
+                    <apex:column >
+                        <apex:facet name="header" >
+                            <apex:inputCheckbox value="{!isAllChecked}"  onchange="makeTrue();" />
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!con.ischecked}"   /></apex:column>
+                    <apex:column value="{!con.contact.Name}" />
+    
+                </apex:pageBlockTable>
+                
+                <apex:pageBlockTable value="{!unContactModels}" var="un" title="No Parent Contact">
+                    <apex:column headerValue="Sr.No" value="{!un.indNum}" />
+                    <apex:column headerValue="select" >
+                        <apex:facet name="header" >
+                            <apex:inputCheckbox value="{!isAllCheckedCon}" onchange="makeTrueCon();" />
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!un.ischecked}" /></apex:column>
+                    <apex:column value="{!un.contact.Name}" />    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+           
+                <apex:pageBlockSection >
+                     <apex:commandButton value="Remove" action="{!remove}" />
+                	<apex:commandButton value="Add"  action="{!add}"  />
+            	</apex:pageBlockSection>
+          
+            	<apex:pageBlockButtons >
+            	<apex:commandButton value="Submit"  action="{!submit}" />
+            </apex:pageBlockButtons>
+                
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

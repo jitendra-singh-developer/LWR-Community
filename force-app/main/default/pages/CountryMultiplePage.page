@@ -1,0 +1,22 @@
+<apex:page controller="CountyMultipleController" >
+   <apex:form >
+      	<apex:actionFunction action="{!fetchState}" reRender="fullform" name="fetchState" />
+		<apex:pageBlock >
+            <apex:pageBlockSection >
+            	 Country : <apex:selectList size="1" value="{!SelectedCountry}" onchange="fetchState();" >
+            <apex:selectOptions value="{!CountryOptions}"  ></apex:selectOptions>
+            </apex:selectList>
+           State : <apex:selectList size="1" value="{!selectedState}"  >
+            <apex:selectOptions value="{!StateOptions}" ></apex:selectOptions>
+            </apex:selectList>  
+           City :
+              <apex:selectList size="1" value="{!selectedCity}" >
+            <apex:selectOptions value="{!CityOptions}" ></apex:selectOptions>
+            </apex:selectList> 	
+                
+            </apex:pageBlockSection>
+             <apex:commandButton value="Save" action="{!save}" />
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page standardController="Booking__c" recordSetVar="booking__c" >
+    <apex:form >
+    		<apex:pageBlock >
+                <apex:commandButton action="/apex/BookingDOM" value="New Booking"/>
+						<apex:pageBlockTable value="{!Booking__c}" var="book">
+                            <apex:column headerValue="Action"><apex:commandLink value="Edit  " action="/apex/BookingDOM?bookid={!book.Id}"/><apex:commandLink value="View" action="https://ibirdssoftwareservices8-dev-ed.lightning.force.com/lightning/r/Booking__c/{!book.Id}/view"/></apex:column>
+                       		<apex:column value="{!book.Customer__c}" />
+                            <apex:column value="{!book.Room_No__c}" />
+                            <apex:column value="{!book.Status__c}" />
+                            <apex:column value="{!book.Check_In_Time__c}" />
+                            <apex:column value="{!book.Check_out_Time__c}" />
+                            <apex:column value="{!book.Name}" />
+                          
+                            
+                </apex:pageBlockTable>
+                
+                		<apex:pageBlockButtons >
+                            <apex:commandButton action="{!first}" value="First" />
+                            <apex:commandButton action="{!previous}" value="Previous"/>
+                            <apex:commandButton action="{!next}" value="Next"/>
+                            <apex:commandButton action="{!last}" value="Last"/>
+                            
+                            
+                            <!--<apex:commandButton action="/apex/Demo" value="New bookdent"/>-->
+                           
+                		</apex:pageBlockButtons>
+               
+        	</apex:pageBlock>
+    </apex:form>
+</apex:page>

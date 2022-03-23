@@ -1,0 +1,21 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Sample Custom Theme Layout" >
+	<aura:attribute name="formFactor" type="String" default="{!$Browser.formFactor}"/>
+<!-- Theme Layout Markup -->
+<aura:attribute name="search" type="Aura.Component[]" required="false"/>
+<aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+<aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+<aura:attribute name="newHeader" type="Aura.Component[]" required="false"/>
+
+
+<div>
+    <div class="customMenu">
+     	{v.formFactor}
+    </div>
+    <div class="profileMenuRegion">
+        {!v.profileMenu}
+    </div>
+    <div class="mainContentArea">
+        {!v.body}
+    </div>
+</div>
+</aura:component>

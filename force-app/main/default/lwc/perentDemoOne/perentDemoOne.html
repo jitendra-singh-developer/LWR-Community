@@ -1,0 +1,12 @@
+<template>
+		<lightning-card title='Parent Component' >
+				
+				<lightning-textarea label='Message From Child :'  value={messageFromChild} ></lightning-textarea>
+				<lightning-input label='Write Your Message :' onkeyup={fillMessage} class='input1' ></lightning-input>
+				<lightning-button label='Send Message' onclick={buttonClick} ></lightning-button>
+				
+				<c-child-demo-one sendata={message} onmessage={buttonParentClick} ></c-child-demo-one>
+			
+		</lightning-card>
+	
+</template>

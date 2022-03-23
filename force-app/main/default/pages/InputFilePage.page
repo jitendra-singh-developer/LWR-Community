@@ -1,0 +1,13 @@
+<apex:page controller="AttachmentUploadController">  
+    <apex:form >
+    <apex:pageMessages />
+        <apex:pageBlock >
+                <apex:commandButton action="{!upload}" value="Save"/>
+            <apex:pageBlockSection showHeader="false" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

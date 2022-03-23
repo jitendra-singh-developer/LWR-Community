@@ -1,0 +1,31 @@
+<template>
+<lightning-card>
+
+
+    
+    
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                   
+                    <th scope="col"> Account Name </th>
+                    <th scope="col"> Phone </th>
+                    <th scope="col">  Fax  </th>
+              
+                </tr>
+            </thead>
+            <tbody >
+                <template  for:each= {accountListObj.data} for:item='acc'>
+                <tr class="slds-hint-parent" key={acc.Id}  >
+                    <th scope="row"> {acc.Name} </th>
+                    <th scope="row"> {acc.Phone} </th>
+                    <th scope="row">  {acc.Fax} </th>
+                    
+                </tr>
+            </template>
+            </tbody>
+        </table>
+         
+
+</lightning-card>
+</template>

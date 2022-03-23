@@ -1,0 +1,21 @@
+<apex:page title="Account List"  standardController="Account" recordSetVar="Accounts" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!Accounts}" var="st">
+                <apex:column value="{!st.OwnerId}" />
+                <apex:column value="{!st.Rating}" />
+                <apex:column value="{!st.Name}" />
+                <apex:column value="{!st.Phone}" />
+                <apex:column value="{!st.ParentId}" />
+                <apex:column value="{!st.Fax}" />
+                <apex:column value="{!st.AccountNumber}" />
+                <apex:column value="{!st.Website}" />
+                <apex:column value="{!st.Site}" />
+                <apex:column value="{!st.TickerSymbol}" />
+                <apex:column value="{!st.Type}" />
+                <apex:column value="{!st.Industry}" />
+                <apex:column value="{!st.Ownership}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

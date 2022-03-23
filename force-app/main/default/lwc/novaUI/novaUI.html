@@ -1,0 +1,47 @@
+<template>
+  
+        <!-- lightning button for open modal window -->
+        <lightning-button variant="brand"
+           label="What is Modal/PopUp in LWC?"
+           title="What is Modal/PopUp in LWC?"
+           onclick={openModal}
+           class="slds-m-left_x-small">
+        </lightning-button>
+      
+        <template if:true={isModalOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            
+     
+        <div class="slds-docked-form-footer">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container" style="position: fixed;left: 27%;top: 25%;">
+                 
+                    <!-- Modal/Popup Box LWC body starts here -->
+                    <div class="slds-modal__content " style="border-radius: 10px; ">
+                        <div class="slds-grid slds-grid_vertical">
+                            <div class="slds-col" style="text-align: center; background-color:#ffffff; border-bottom:1px solid slategray ; padding:10px">
+                            <span style="color:gray ;font-size: large;" >Employment:Employer details</span>
+                            </div>
+                            <div class="slds-col" style="text-align: center; background-color:#ffffff; border-bottom:1px solid slategray ;padding:10px">
+                            <span style="color:#6e13d7; font-size: x-large;">Edit Employer details</span>
+                            </div>
+                            <div class="slds-col" style="text-align: center; background-color:#ffffff ; padding:10px">
+                            <span style="color:#6e13d7; font-size: x-large;">Delete Employer</span>
+                            </div>
+                            </div>
+                    </div>
+                  
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer" style="text-align: center; background-color:#ffffff; margin:2px; margin-top:7px;  border-radius: 10px; background-color: white;
+                    font-weight: 500; margin-bottom: 7px;" >
+                        
+                        <button class="slds-button" style="text-align: center; font-size: x-large; color:#6e13d7" onclick={closeModal} title="Cancel">Cancel</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </template>
+   
+
+</template>

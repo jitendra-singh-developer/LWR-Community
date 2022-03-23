@@ -1,0 +1,19 @@
+<apex:page controller="CountryDynamicController" >
+   <apex:form id="frm" >
+        <apex:actionFunction action="{!fetchState}" reRender="frm"  name="fetchState" />
+        <apex:actionFunction action="{!fetchCity}" reRender="frm"  name="fetchCity" />
+		<apex:pageBlock >
+          Country : <apex:selectList size="1" value="{!SelectedCountry}" onchange="fetchState();" >
+            <apex:selectOptions value="{!CountryOptions}" ></apex:selectOptions>
+            </apex:selectList>
+           State : <apex:selectList size="1" value="{!selectedState}" onchange="fetchCity();" >
+            <apex:selectOptions value="{!StateOptions}" ></apex:selectOptions>
+            </apex:selectList>  
+           City :
+              <apex:selectList size="1" value="{!selectedCity}" >
+            <apex:selectOptions value="{!CityOptions}" ></apex:selectOptions>
+            </apex:selectList> 
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

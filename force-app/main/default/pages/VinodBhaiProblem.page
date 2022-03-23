@@ -1,0 +1,52 @@
+<apex:page controller="FileUploadController" sidebar="false" showHeader="false">
+   <apex:form enctype="multipart/form-data" id="docform">
+    <apex:pageBlock title="Document" id="docpb">
+        <table>
+            <tr>
+                <td> <apex:outputLabel value="Doc Code" for="docCode"/></td>
+                <td>
+                    <apex:selectList value="{!docCode}" id="docCode" multiselect="false" size="1">
+                        <apex:selectOptions value="{!docCodes}"/>
+                    </apex:selectList>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                     <apex:outputLabel value="File" for="file"/>
+                </td>
+                <td>
+                    <apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='1'>
+                    <apex:commandButton action="{!upload}" value="Save"/>
+                </td>
+            </tr>        
+       </table> 
+    </apex:pageBlock>
+    <apex:pageBlock title="Documents" id="dpb">
+
+        <apex:pageBlockTable value="{!documentList}" var="documentItem" id="documentTable">
+            <apex:column headerValue="Document Code">
+                <apex:outputField value="{!documentItem.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Date">
+                <apex:outputField value="{!documentItem.LastReferencedDate}"/>
+            </apex:column>
+            <apex:column headerValue="User">
+                <apex:outputField value="{!documentItem.AuthorId}"/>
+            </apex:column>
+             <apex:column headerValue="Delete">
+                 <apex:commandLink action="{!deleteDocument}" reRender="dpb"> 
+                      <apex:image url="{!URLFOR($Resource.iBirdsLogo, 'images/deleteicon.gif')}" />
+                      <apex:param value="{!documentItem.Name}" name="docCodeParam" />
+                 </apex:commandLink>
+            </apex:column>
+        </apex:pageBlockTable> 
+        <br/>
+
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

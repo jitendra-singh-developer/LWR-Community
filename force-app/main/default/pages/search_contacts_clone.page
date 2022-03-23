@@ -1,0 +1,32 @@
+<apex:page controller="SearchContactsCloneController" lightningStylesheets="true" title="Search Contacts"  >
+    	<apex:sectionHeader title="Contacts" subtitle="Search"  />
+    <apex:form >
+          
+        
+        <apex:inputText value="{!searchValue}" />
+        <apex:commandButton action="{!searchRecords}" reRender="frm"  value="Search" style="margin-left:20px" status="loadData" />
+        <apex:actionStatus id="loadData" startText="Searching..." startStyle="margin-left:10px" /><br/><br/>
+        
+        <apex:pageBlock id="frm" >
+            
+            Select Type : <apex:selectList value="{!selectedType}" size="1" >
+                			<apex:selectOptions value="{!selectList}"/>
+            			  </apex:selectList>
+            <apex:commandButton value="Save" action="{!save}" /><br/><br/>
+            
+            <apex:pageMessages ></apex:pageMessages>  
+            <apex:pageBlockTable value="{!contactModelList}"   var="con">
+                <apex:column rendered="{!!(contactModelList.size == 0)}" headerValue="Actions" >
+                    <apex:inputCheckbox value="{!con.isChecked}" style="margin-left:20px;" />
+                </apex:column>
+                <apex:column value="{!con.conObj.Name}" />
+                <apex:column value="{!con.conObj.Email}" />
+                <apex:column value="{!con.conObj.Account.Name}" />
+                <apex:column value="{!con.conObj.Phone}" />
+                <apex:column value="{!con.conObj.Type__c}" />
+            </apex:pageBlockTable>
+         
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

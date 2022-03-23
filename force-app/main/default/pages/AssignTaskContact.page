@@ -1,0 +1,26 @@
+<apex:page standardController="Contact" extensions="AssignTaskContactController" >
+    <apex:form >
+        
+        <apex:pageBlock title="Contact Detail">
+            
+            <apex:pageBlockTable value="{!contacts}" var="con">
+                <apex:column ><apex:commandButton action="/apex/ContactDetailPage?id={!con.id}" value="Detail"  /></apex:column>
+                <apex:column value="{!con.AccountId}" />
+                <apex:column value="{!con.Email}" />
+                <apex:column value="{!con.Phone}" />
+                <apex:column value="{!con.Name}" />
+                
+            </apex:pageBlockTable>
+            
+         
+                
+                
+            
+            
+            
+            
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

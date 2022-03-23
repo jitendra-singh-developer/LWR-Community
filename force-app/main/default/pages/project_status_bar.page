@@ -1,0 +1,137 @@
+<apex:page standardController="Project__c" extensions="ProjectProcessBarController" >
+    
+    
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+                     hello
+    <lightning-progress-indicator current-step="3" type="path" variant="base">
+        <lightning-progress-step label="Contacted" value="1"></lightning-progress-step>
+        <lightning-progress-step label="Open" value="2"></lightning-progress-step>
+        <lightning-progress-step label="Unqualified" value="3"></lightning-progress-step>
+        <lightning-progress-step label="Nurturing" value="4"></lightning-progress-step>
+        <lightning-progress-step label="Closed" value="5"></lightning-progress-step>
+    </lightning-progress-indicator>
+		
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    <style>
+    
+    progress,progress[role] {
+    
+    -webkit-appearance: none;
+    
+    -moz-appearance: none;
+    
+    appearance: none;
+    
+    border: none;
+    
+    background-size: auto;
+    
+    height: 15px;
+    
+    width: 100%;
+    
+    }
+    
+    .skill-list {
+    
+    list-style: none;
+    
+    margin: 0;
+    
+    padding: 1em;
+    
+    }
+    
+    .skill {
+    
+    margin-bottom: 1em;
+    
+    position: relative;
+    
+    }
+    
+    .skill h3 {
+    
+    color: #fff;
+    
+    left: 1em;
+    
+    line-height: 1;
+    
+    position: absolute;
+    
+    top: 1em;
+    
+    }
+    
+    .skill ::-webkit-progress-value {
+    
+    -webkit-animation: bar-fill 2s;
+    
+    width: 0px;
+    
+    }
+    
+    .skill-1::-webkit-progress-value {
+    
+    background: #1797c0;
+    
+    }
+    
+    .skill-1::-webkit-progress-bar {
+    
+    background: #ccc;
+    
+    }
+    
+    .skill-2::-webkit-progress-value {
+    
+    background: #1797c0;
+    
+    }
+    
+    .skill-2::-webkit-progress-bar {
+    
+    background: #ccc;
+    
+    }
+    
+    .skill-3::-webkit-progress-value {
+    
+    background: #1797c0;
+    
+    }
+    
+    .skill-3::-webkit-progress-bar {
+    
+    background: #ccc;
+    
+    }
+    
+    @-webkit-keyframes bar-fill {
+    
+    0% {
+    
+    width: 0;
+    
+    }
+    
+    }
+    
+    @keyframes bar-fill {
+    
+    0% {
+    
+    width: 0;
+    
+    }
+    
+    }
+    
+</style>
+    
+</apex:page>

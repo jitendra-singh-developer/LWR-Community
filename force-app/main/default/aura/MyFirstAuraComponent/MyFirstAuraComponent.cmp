@@ -1,0 +1,24 @@
+<aura:component  implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <H1 class="fsize slds-p-around_small" >Jitendra Singh</H1>
+    
+    <aura:Attribute name="Num1" type="Integer"  />
+    <aura:Attribute name="Percent" type="Integer"  />
+    <div class="slds-p-around_small" >
+        <label class="labelsize" >Enter a Number</label>
+        <lightning:input class="labelsize" name="FisrtOne" type="Number" value="{!v.Num1}" variant="label-hidden" />
+        <label class="slds-form-element__label labelsize" for="text-input-id-1">Enter Percentage of above number</label>
+        <input class="labelsize slds-input" name="percentage" type="Number" value="{!v.Percent}" formatter="percent-fixed"  />
+        <br/>
+        <br/>
+        <div class="pait" >
+            <aura:if isTrue = "{!v.Percent}" >
+            	  {!v.Percent} percent of {!v.Num1} is {!div(mult(v.Num1,v.Percent),100)}
+                  <aura:set attribute="else" >
+                    Nothing To Show
+                  </aura:set>
+            
+            </aura:if>
+          
+        </div>  
+    </div> 
+</aura:component>

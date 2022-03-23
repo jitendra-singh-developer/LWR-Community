@@ -1,0 +1,23 @@
+<aura:component controller="AuraCreateContactController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name='contactMap' type="Contact" default="{
+                                                                 SobjectName : 'Contact',
+                                                                 FirstName : '',
+                                                                 LastName : '',
+                                                                 Phone : '',
+                                                                 Email : ''
+                                                                 }" />
+    <aura:registerEvent name="createContact" type="c:CreateContactEvent" />
+   
+    
+
+    <label class="labelStyle" >First Name</label>
+    <lightning:input  name="Input1" type="String" value="{!v.contactMap.FistName}" variant="label-hidden" required="true" />
+	<label class="labelStyle" >Last Name</label>
+    <lightning:input   name="Input2" type="String" value="{!v.contactMap.LastName}" variant="label-hidden" required="true" />
+    <label class="labelStyle" >Phone</label>
+    <lightning:input   name="Input3" type="String" value="{!v.contactMap.Phone}" variant="label-hidden" required="true" />
+    <label class="labelStyle" >Email</label>
+    <lightning:input   name="Input4" type="String" value="{!v.contactMap.Email}" variant="label-hidden" required="true" />
+    <lightning:button label="Create Contact" onclick="{!c.createContact}" />
+</aura:component>

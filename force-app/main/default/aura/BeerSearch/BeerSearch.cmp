@@ -1,0 +1,13 @@
+<aura:component >
+	<div class="slds-p-horizontal_medium slds-m-top_small" >
+    	  <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search Beer"
+            type="search"
+            variant = "label-Hidden"
+            class="formatInput"
+        />
+    
+    </div>
+</aura:component>

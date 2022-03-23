@@ -1,0 +1,15 @@
+<template>
+  
+  <lightning-card title="Studnet" icon-name="custom:custom14">
+      <ul class="slds-m-around_medium">
+        {catchMessage}
+          <template if:true = "{catchMessage}"  for:each={studentProfiles} for:item="student">
+              <li key={student.Id}>
+                  <b style="color:rgb(49, 105, 209)">{student.First_Name__c} {student.Last_Name__c}</b>
+                  <b> {student.City__c} </b>
+                  <b> <lightning-button variant="brand" label="Student Profile" title="Primary action" onclick={showStudentProfile} class="slds-m-left_x-small"></lightning-button> </b>
+              </li>
+          </template>
+      </ul>
+  </lightning-card>
+</template>

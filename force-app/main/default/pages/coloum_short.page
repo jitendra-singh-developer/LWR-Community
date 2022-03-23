@@ -1,0 +1,28 @@
+<apex:page controller="PageBlockTableSortingCon" tabStyle="Account">
+<apex:sectionHeader title="Accounts List with Sorting"></apex:sectionHeader>
+<apex:form >
+<apex:pageBlock title="" id="pageBlock">
+    
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:pageBlockTable value="{!accounts}" var="a" >
+       <apex:column >
+         <apex:facet name="header">   
+           <apex:commandLink action="{!ViewData}" value="Account Name{!IF(sortExpression=='name',IF(sortDirection='ASC','▼','▲'),'')}" id="cmdSort">
+             <apex:param value="name" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+         <apex:outputLink value="/{!a.Id}" >{!a.Name}</apex:outputLink>
+       </apex:column>
+       <apex:column value="{!a.Phone}">
+         <apex:facet name="header">
+           <apex:commandLink action="{!ViewData}" value="Phone{!IF(sortExpression=='Phone',IF(sortDirection='ASC','▼','▲'),'')}">
+             <apex:param value="Phone" name="column" assignTo="{!sortExpression}" ></apex:param>
+           </apex:commandLink>
+         </apex:facet>
+       </apex:column>
+       
+     
+    </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

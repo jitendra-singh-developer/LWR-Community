@@ -1,0 +1,23 @@
+<apex:page standardController="Contact" extensions="AssignTaskContactController">
+    <apex:form > 
+       
+        <apex:pageBlock >
+			 <apex:commandButton action="/apex/AssignTaskContact" value="Back" />
+            <apex:pageBlockSection title="Contact Detail" >
+               
+                <apex:outputField value="{!Contact.AccountId}" />
+                <apex:outputField value="{!Contact.Email}" />
+                <apex:outputField value="{!Contact.Phone}" />
+                <apex:outputField value="{!Contact.Name}" />
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!assignTask}" value="Assing Task"  />
+            
+            
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+        
+    </apex:form> 
+</apex:page>

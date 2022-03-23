@@ -1,0 +1,28 @@
+@media only screen and (max-width:300px) {
+    .respons {
+        color:aqua;
+        background-color: black;
+        font-size: large;
+    }
+    
+}
+
+@media only screen and (min-width:300px) and (max-width:450px) {
+    
+    .respons {
+        color:rgb(0, 255, 34);
+        background-color: rgb(207, 33, 33);
+        font-size: x-large;
+    }
+}
+
+@media only screen and (min-width:450px) and (max-width:800px) {
+    
+    .respons {
+        color:rgb(0, 38, 255);
+        background-color: rgb(185, 145, 14);
+        border: black;
+        border-radius: 10%;
+        font-size: xx-small;
+    }
+}

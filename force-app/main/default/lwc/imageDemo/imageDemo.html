@@ -1,0 +1,15 @@
+<template>
+		<lightning-progress-indicator current-step={selectedPath} type="base" variant="base">
+				<lightning-progress-step label="" class="slds-hide" value=""></lightning-progress-step>
+				<lightning-progress-step label="New" value="New"></lightning-progress-step>
+				<lightning-progress-step label="Planning" value="Planning"></lightning-progress-step>
+				<lightning-progress-step label="Construction" value="Construction"></lightning-progress-step>
+				<lightning-progress-step label="Deployment" value="Deployment"></lightning-progress-step>
+				<lightning-progress-step label="Signoff" value="Signoff"></lightning-progress-step>
+		</lightning-progress-indicator>
+		<lightning-progress-indicator current-step={currentStep} type="base" variant="base">
+				<lightning-progress-step label="Step 1" value="1" onclick={handleOnStepClick}></lightning-progress-step>
+				<lightning-progress-step label="Step 2" value="2" onclick={handleOnStepClick}></lightning-progress-step>
+				<lightning-progress-step label="Step 3" value="3" onclick={handleOnStepClick}></lightning-progress-step>
+		</lightning-progress-indicator>
+</template>

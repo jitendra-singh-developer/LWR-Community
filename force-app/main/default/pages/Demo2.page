@@ -1,0 +1,24 @@
+<apex:page title="Booking" standardController="Booking__c">
+    
+    <apex:form >
+    <apex:pageBlock title="Booking detail">
+        
+        <apex:pageBlockSection >
+        
+           <apex:inputField value="{!Booking__c.Customer__c}" />
+             <apex:inputField value="{!Booking__c.Room_No__c}" />
+             <apex:inputField value="{!Booking__c.Status__c}" />
+             <apex:inputField value="{!Booking__c.Total_Hours__c}" />
+             <apex:inputField value="{!Booking__c.Check_In_Time__c}" />
+             <apex:inputField value="{!Booking__c.Check_out_Time__c}" />
+             <apex:inputField value="{!Booking__c.Name}" />
+             <apex:inputField value="{!Booking__c.Amount__c}" />
+         
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    
+    </apex:form>
+    
+</apex:page>

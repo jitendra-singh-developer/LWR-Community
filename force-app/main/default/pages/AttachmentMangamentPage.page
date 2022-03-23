@@ -1,0 +1,235 @@
+<apex:page controller="AttachmentMangamentController" >
+    
+    <apex:form id="form"  >
+        <apex:pageMessages />
+        <apex:outputPanel styleClass="PopupBackground" rendered="{!isObjects}" />
+        <apex:actionFunction action="{!showAttachment}" status="loadingStatus" reRender="form" name="showAttachment" />
+        <apex:actionFunction action="{!copyFunction}" status="loadingStatus" reRender="form" name="copyFunction" />
+        <apex:outputPanel >
+            <apex:pageBlock >
+                <apex:actionStatus id="loadingStatus" startStyle="font-weight:bold;color:Black;" startText="loading...please wait !!!" ></apex:actionStatus>
+                <apex:pageBlockSection title="Attachment Management " columns="1"  >
+              	<apex:outputPanel >
+                    Objects :<apex:selectList value="{!selectedObject}" size="1"    onchange="showAttachment();" >
+                    <apex:selectOptions value="{!ObjectOptions}" ></apex:selectOptions>
+                    </apex:selectList>    
+                </apex:outputPanel>
+                </apex:pageBlockSection>
+                
+            </apex:pageBlock>
+             <apex:actionFunction action="{!makeAllTrue}" name="makeAllTrue" reRender="makeTrue"  />
+            <apex:actionFunction action="{!oncheckedAttach}" name="oncheckedAttach" reRender="makeTrue" >
+            <apex:param assignTo="{!copyAttach}" name="copyAttach" value="" />
+            </apex:actionFunction>
+            <apex:pageBlock rendered="{!isAttach}">
+              	
+                <div style="overflow:auto;  height:400px;">
+                    <apex:pageBlockTable value="{!sAttachmentModels}" var="att" id="makeTrue" >
+                        <apex:column >
+                            <apex:facet name="header">
+                            	<apex:inputCheckbox value="{!makeAllAttachTrue}"  onchange="makeAllTrue();" />
+                            </apex:facet>
+                         <apex:inputCheckbox value="{!att.ischecked}" onchange="oncheckedAttach('{!att.attach.Id}');" /></apex:column>
+                        <apex:column headerValue="Action" ><apex:commandLink value="Preview"  onclick="window.open('/servlet/servlet.FileDownload?file={!att.attach.Id}')" /></apex:column>
+                        
+                        <apex:column headerValue="Attachment File" ><apex:image value="/servlet/servlet.FileDownload?file={!att.attach.Id}"  rendered="{!IF(OR(att.attach.ContentType == 'image/jpeg',att.attach.ContentType == 'image/jpeg/' ), TRUE, FALSE)}"   height="50px" width="50px"   />
+                            <apex:image value="/servlet/servlet.FileDownload?file={!att.attach.Id}" rendered="{!IF(att.attach.ContentType == 'image/png', TRUE, FALSE)}" height="50px" width="50px"   />
+                            <apex:image value="{!$Resource.txtfile}" rendered="{!IF(att.attach.ContentType == 'text/plain', TRUE, FALSE)}"  height="50px" width="50px" />
+                            <apex:image value="{!$Resource.wordFile}" rendered="{!IF(att.attach.ContentType == 'application/msword', TRUE, FALSE)}"  height="50px" width="50px" />
+                            <apex:image value="{!$Resource.excelFile}" rendered="{!IF(att.attach.ContentType == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', TRUE, FALSE)}"  height="50px" width="50px" />
+                            <apex:image value="{!$Resource.vcfFile}" rendered="{!IF(att.attach.ContentType == 'text/x-vcard', TRUE, FALSE)}"  height="50px" width="50px" />
+                            <apex:image value="{!$Resource.csvFile}" rendered="{!IF(att.attach.ContentType == 'application/vnd.ms-excel', TRUE, FALSE)}"  height="50px" width="50px" />
+                        </apex:column>
+                        
+                        <apex:column value="{!att.attach.Name}" />
+                        <apex:column value="{!att.attach.ContentType}" />
+                        
+                        
+                        
+                    </apex:pageBlockTable>
+                </div>
+                <apex:pageBlockButtons >
+                    <apex:commandButton onclick="copyFunction();" value="Copy To" reRender="none"  />
+                </apex:pageBlockButtons>
+                
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:actionFunction action="{!showObjectList}" reRender="form"  name="showObjectList" status="ObjectloadingStatus" />
+        
+        <apex:actionFunction action="{!closeWindow}" reRender="form"  name="closeWindow" />
+       
+        <apex:actionFunction action="{!searchRecord}" reRender="form"  name="searchRecord" status="search" />
+           
+        
+        <apex:pageBlock rendered="{!isObjects}"    >
+            
+            <apex:outputPanel styleClass="customPopup"   >
+               	
+                <apex:commandButton value="X"  onclick="closeWindow();" reRender="none" styleClass="closeButton"> </apex:commandButton>
+                 <apex:actionFunction action="{!searchRecord}" reRender="form"  name="searchRecord" status="search" />
+                
+                <apex:pageBlockSection title="Select object to Copy Attachment" columns="2" collapsible="false" >
+                
+                   <apex:selectList value="{!selectedCopyObject}" size="1"   onchange="showObjectList();"> 
+                     Objects : <apex:selectOptions value="{!ObjectCopyOptions}" ></apex:selectOptions> 
+                    </apex:selectList> 
+                   
+					<apex:outputPanel >
+                    Name :<apex:inputText value="{!name}"/><apex:commandButton value="Search" reRender="none" onclick="searchRecord();"/><apex:actionStatus id="search"  startStyle="font-weight:bold;color:Black;" startText="Searching..." ></apex:actionStatus>
+                    </apex:outputPanel>
+					
+                    <apex:outputPanel >
+                    
+                     <apex:actionStatus id="ObjectloadingStatus" startStyle="font-weight:bold;color:Black;" startText="loading...please wait !!!" ></apex:actionStatus>
+                    </apex:outputPanel>
+                   
+                </apex:pageBlockSection>
+               
+                  
+                                       
+                <apex:actionFunction action="{!onCheckedObject}" reRender="forp"  name="onCheckedObject" >
+                <apex:param assignTo="{!checkedAccountRecordID}"  name="checkedAccountRecordID" value="" />
+                </apex:actionFunction>
+                
+              
+                <apex:pageBlock rendered="{!isAccount}" >
+                  <apex:actionFunction action="{!makeRecord}" reRender="forp" name="makeRecord" />
+                      <apex:sectionHeader title="Account"  subtitle="Account List"  />
+                    <div style="overflow:auto;  height: 250px;">
+                        <apex:pageBlockTable value="{!showObjectListModels}" var="sobj" rendered="{!showObjectListModels.size > 0}" id="forp" >
+                            <apex:column >
+                            <apex:facet name="header">
+                            <apex:inputCheckbox value="{!objectCheckedBox}" onchange="makeRecord();" />    
+                            </apex:facet>    
+                            <apex:inputCheckbox value="{!sobj.ischeckedbox}" onchange="onCheckedObject('{!sobj.accountObject.Id}');" /></apex:column>
+                            <apex:column value="{!sobj.accountObject.Name}" />
+                            <apex:column value="{!sobj.accountObject.Email__c}" />
+                            <apex:column value="{!sobj.accountObject.Phone}" />
+                            
+                        </apex:pageBlockTable>
+                    </div>
+                  
+                       <div align = "center">
+                            	<apex:commandButton value="Copy" action="{!attachFile}" />
+                    		</div>
+                  
+                    
+                </apex:pageBlock>
+                  <apex:actionFunction action="{!onCheckedObject}" reRender="forp"  name="onCheckedObject" >
+                <apex:param assignTo="{!checkedAccountRecordID}"  name="checkedAccountRecordID" value="" />
+                </apex:actionFunction>
+                <apex:pageBlock rendered="{!isOpportunity}">
+                      <apex:actionFunction action="{!makeRecord}" reRender="forp" name="makeRecord" />
+                      <apex:sectionHeader title="Opportunity" subtitle="Opportunity List"  />
+                  
+                    <div style="overflow:auto;  height: 250px;">
+                        <apex:pageBlockTable value="{!showObjectListModels}" var="sobj" rendered="{!showObjectListModels.size > 0}" id="forp" >
+                            <apex:column >
+                            <apex:facet name="header">
+                            <apex:inputCheckbox value="{!objectCheckedBox}" onchange="makeRecord();" />    
+                            </apex:facet>    
+                            <apex:inputCheckbox value="{!sobj.ischeckedbox}"  onchange="onCheckedObject('{!sobj.opportunityObject.Id}');" /></apex:column>
+                            <apex:column value="{!sobj.opportunityObject.Name}" />
+                            <apex:column value="{!sobj.opportunityObject.Amount}" />
+                            <apex:column value="{!sobj.opportunityObject.CloseDate}" />
+                            
+                        </apex:pageBlockTable>	
+                    </div>
+                  
+                           <div align = "center">
+                            	<apex:commandButton value="Copy" action="{!attachFile}" />
+                    		</div>
+        
+                    
+                </apex:pageBlock>
+                  <apex:actionFunction action="{!onCheckedObject}" reRender="forp"  name="onCheckedObject" >
+                <apex:param assignTo="{!checkedAccountRecordID}"  name="checkedAccountRecordID" value="" />
+                </apex:actionFunction>
+                <apex:pageBlock rendered="{!iscontact}">
+                       <apex:actionFunction action="{!makeRecord}" reRender="forp" name="makeRecord" />
+                      <apex:sectionHeader title="Contact" subtitle="Contact List"  />
+                  
+                    <div style="overflow:auto;  height: 250px;">
+                        <apex:pageBlockTable value="{!showObjectListModels}" var="sobj" rendered="{!showObjectListModels.size > 0}" id="forp" >
+                            <apex:column >
+                           <apex:facet name="header">
+                            <apex:inputCheckbox value="{!objectCheckedBox}" onchange="makeRecord();" />    
+                            </apex:facet>  
+                            <apex:inputCheckbox value="{!sobj.ischeckedbox}"  onchange="onCheckedObject('{!sobj.contactObject.Id}');" /></apex:column>
+                            <apex:column value="{!sobj.contactObject.Name}" />
+                            <apex:column value="{!sobj.contactObject.Email}" />
+                            <apex:column value="{!sobj.contactObject.Phone}" />
+                            
+                        </apex:pageBlockTable>
+                    </div>
+                 
+                            <div align = "center">
+                            	<apex:commandButton value="Copy" action="{!attachFile}" />
+                    		</div>
+                    
+                   
+                        
+                 
+                    
+                </apex:pageBlock> 
+                
+            </apex:outputPanel>
+            
+            
+        </apex:pageBlock>
+        		<apex:actionFunction action="{!closePreview}" reRender="form" name="closePreview" />
+      	<apex:outputPanel rendered="{!isView}" styleClass="preview">
+        	 <apex:commandButton value="X"  onclick="closePreview();" reRender="none" styleClass="priViewcloseButton"> </apex:commandButton>
+            <apex:image value="Window.open('/servlet/servlet.FileDownload?file={!preFileId}')" height="400px" width="400px"   />
+        
+        </apex:outputPanel>
+        
+        
+        
+    </apex:form>
+    
+    <style type="text/css">
+        
+          .closeButton {
+        float: right;
+        }
+        
+        .customPopup {
+        -webkit-animation: fadeIn 0.50s;
+        animation: fadeIn 0.50s;       
+        background-color: white;
+        border-style: solid;
+        border-width: 2px;
+        left: 20%;
+        border-radius: 10px;
+        padding: 5px;
+        position: absolute;
+        width: 800px;
+        top: 15%;
+      
+        }
+        
+        .PopupBackground{
+        background-color:black;
+        opacity: 0.20;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+        
+           @-webkit-keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+        }
+        
+        @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+        
+        .priViewcloseButton {
+        float: right;
+        }
+ 
+    </style>
+</apex:page>

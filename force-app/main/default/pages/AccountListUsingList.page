@@ -1,0 +1,25 @@
+<apex:page title="Account List" controller="AccountListUsingList">
+    <apex:form >
+        
+        <apex:pageBlock >
+            
+            <apex:pageBlockTable value="{!accounts}" var="acc">
+               
+                <apex:column value="{!acc.Name}" />
+                <apex:column value="{!acc.Rating}" />
+                <apex:column value="{!acc.Phone}" />
+                <apex:column value="{!acc.Fax}" />
+                <apex:column value="{!acc.Website}" />
+                  <apex:column value="{!acc.Cities__c}" />
+                  <apex:column value="{!acc.Password__c}" />
+            </apex:pageBlockTable>
+          
+            
+            
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+    
+</apex:page>

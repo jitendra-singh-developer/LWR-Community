@@ -1,0 +1,19 @@
+<apex:page showHeader="false" standardStylesheets="false"
+    standardController="Account" extensions="SaveAsPdfExtension"
+    contentType="{! renderedContentType }" renderAs="{! renderingService }">
+
+ 
+    Hello this simple program to download pdf of vf page   
+    <apex:form rendered="{! renderingService != 'PDF' }"
+               style="text-align: right; margin: 10px;">
+        <apex:commandLink action="{! saveToPdf }" value="Save to PDF">
+            <apex:param assignTo="{! renderedFileName }" value="Contact-List.pdf"/>
+        </apex:commandLink>
+        <hr/>
+    </apex:form>
+    
+    
+   
+    contentType: <apex:outputText value=" {! renderedContentType }"/><br/>
+    renderingService: <apex:outputText value=" {! renderingService }"/><br/>
+</apex:page>

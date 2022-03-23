@@ -1,0 +1,14 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <apex:form >
+    	<apex:pageBlock title="Accounts List">
+        	<apex:pageBlockTable value="{!accounts}" var="act" >
+                <apex:column ><apex:commandLink action="/apex/AccountDemo2?id={!act.Id}" value="Detail" /></apex:column>
+                
+                <apex:column value="{!act.Name}" />
+            	<apex:column value="{!act.AccountNumber}" />
+                <apex:column value="{!act.Rating}" />
+                <apex:column value="{!act.Fax}" />
+            </apex:pageBlockTable> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,41 @@
+<apex:page controller="CountryMultipleCheckBoxController" >
+    <apex:form >
+        
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+            		<apex:inputField value="{!country.Name}" />
+                	<apex:inputField value="{!country.State__c}" />
+                	<apex:inputField value="{!country.City__c}" />
+            </apex:pageBlockSection>
+         
+            	<apex:commandButton value="Save" action="{!save}" />
+           
+        </apex:pageBlock>
+    </apex:form>
+  	  <apex:form id="form2" >
+          <apex:actionFunction action="{!deleta}" name="deleta" reRender="form2" >
+          <apex:param assignTo="{!sDelId}" name="sDelId" value="" />
+          </apex:actionFunction>
+    	<apex:pageBlock >
+            <apex:pageBlockTable value="{!countryModels}" var="cMod" >
+                <apex:column headerValue="Sr.No" value="{!cMod.srNum}" />
+                <apex:column > 
+                    <apex:facet name="header" >
+                    	<apex:inputCheckbox value="{!IsAllChecked}" />
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!cMod.ischecked}" /> </apex:column>
+                <apex:column value="{!cMod.conObj.Name}" />
+                <apex:column value="{!cMod.conObj.State__c}" />
+                <apex:column value="{!cMod.conObj.City__c}" />
+                <apex:column headerValue="Action" ><apex:commandLink onclick="deleta('{!cMod.conObj.Id}')" reRender="none"  value="Delete " /> | <apex:commandLink value=" Edit" action="{!edita}" /> </apex:column>
+            
+            </apex:pageBlockTable>
+              <apex:pageBlockButtons >
+              <apex:commandButton value="Edit"  action="{!editMul}" />
+              <apex:commandButton value="Delete" action="{!delMul}" />
+              <apex:commandButton value="Submit" action="{!submit}" />
+          </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

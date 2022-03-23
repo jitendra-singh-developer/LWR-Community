@@ -1,0 +1,10 @@
+.slds-modal__container {
+    max-width: 70rem !important;
+    width: 70% !important;
+}
+
+.labelStyle{
+    font-Size:20px;
+    height:50px;
+    margin-left:20px;
+}

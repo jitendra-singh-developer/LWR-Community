@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:pageBlock >
+     
+        <c:AccountContactSobjectComponent objectName="Lead" />
+        
+    </apex:pageBlock>
+</apex:page>

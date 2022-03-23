@@ -1,0 +1,16 @@
+<apex:page title="Opportunity Stage Record"  controller="OpportuniyStageController" >
+    <apex:form >
+		<apex:pageBlock >
+        	<apex:pageBlockTable value="{!opportunityModels}" var="opp" >
+                <apex:column headerValue="Stage Name" ><apex:outputText value="{!opp.stageNam}" /></apex:column>
+                <apex:column headerValue="Amount Sum" ><apex:outputText value="{!opp.amountSum}"/></apex:column>
+                <apex:column headerValue="Amount Max" ><apex:outputText value="{!opp.amountMax}" /></apex:column>
+                <apex:column headerValue="Amount Min" ><apex:outputText value="{!opp.amountMin}" /></apex:column>
+                <apex:column headerValue="Amount Avarage" ><apex:outputText value="{!opp.avarage}" /></apex:column>
+                <apex:column headerValue="Count" ><apex:outputText value="{!opp.count}" /></apex:column>
+            
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

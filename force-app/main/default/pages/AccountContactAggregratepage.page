@@ -1,0 +1,17 @@
+<apex:page controller="AccountContactAggregrateController">
+    <apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!accounts}" var="account">
+                
+	
+                            <apex:column value="{!account.Name}" />
+                			<apex:column headerValue="Contacts" value="{!account.Contacts.size}" />
+                                        
+            
+            </apex:pageBlockTable>
+        
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

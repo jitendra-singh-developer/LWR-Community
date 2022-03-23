@@ -1,0 +1,11 @@
+<apex:page controller="OpportunityAccountDetailController" >
+    <apex:pageBlock >
+			<apex:pageBlockSection title="Opportunity Detail">
+        		<apex:outputField value="{!oppos.Name}" />
+                <apex:outputField value="{!oppos.Amount}" />
+                <apex:outputField value="{!oppos.CloseDate}" />
+        	</apex:pageBlockSection>
+        <c:AccountDetailComponent objectName="{!oppos.AccountId}" />
+    
+    </apex:pageBlock>
+</apex:page>

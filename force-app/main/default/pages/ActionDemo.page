@@ -1,0 +1,3 @@
+<apex:page controller="CustomController" action="{!doActionMethod}" >
+    {!tempVAr}
+</apex:page>

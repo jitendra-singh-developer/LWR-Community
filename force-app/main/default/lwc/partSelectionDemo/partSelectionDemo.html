@@ -1,0 +1,69 @@
+<template>
+    <!-- lightning button for open modal window -->
+    <lightning-button variant="brand" label="Use Part Salection Wizard" title="Use Part Salection Wizard"
+        onclick={openModal} class="slds-m-left_x-small">
+    </lightning-button>
+    <!--Use template if:true to display/hide popup based on isModalOpen value-->
+    <template if:true={isPartCasualModelOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <div class="demo-only" style="padding:0.5rem;background:#16325c">
+                        <div class="slds-text-color_inverse slds-text-align_left">Part Selection Wizard.</div>
+                    </div>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-progress-indicator current-step={currentStep} type="base" variant="base">
+                        <lightning-progress-step label="Step 1" value="1" onclick={handleOnStepClick}>
+
+                        </lightning-progress-step>
+                        <lightning-progress-step label="Step 2" value="2" onclick={handleOnStepClick}>
+
+                        </lightning-progress-step>
+                        <lightning-progress-step label="Step 3" value="3" onclick={handleOnStepClick}>
+
+                        </lightning-progress-step>
+                        <lightning-progress-step label="Step 4" value="4" onclick={handleOnStepClick}>
+
+                        </lightning-progress-step>
+                    </lightning-progress-indicator>
+
+
+                    <template if:true={isStepOne}>
+                       
+
+                    <div class="slds-text-font_monospace">Choose Application Type1</div>
+                    <div class="slds-grid slds-wrap slds-gutters" >
+                       
+                            <template for:each={warrantyProductList} for:item="item" >
+                                
+                                <div key={item.Id} onclick={callfun} class="slds-col slds-size_1-of-3 slds-var-p-around_medium" >
+                                    
+                                   
+                                        <div class="slds-box partBox "  >
+                                            <img src={item.File_Image__c} class="imgClass" />
+                                            <div class="appName">{item.Name}</div>
+                                        </div>
+
+                                  
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+
+
+                    <button class="slds-button  btnClass" onclick={closePartModelOpen} title="Cancel">Cancel</button>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+</template>

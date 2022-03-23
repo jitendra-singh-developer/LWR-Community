@@ -1,0 +1,32 @@
+<apex:page standardController="Student__c" recordSetVar="Students__C" >
+    <apex:form >
+    		<apex:pageBlock >
+                <apex:commandButton action="/apex/Demo" value="New Student"/>
+						<apex:pageBlockTable value="{!Students__C}" var="stu">
+                            <apex:column headerValue="Action"><apex:commandLink value="Edit  " action="/apex/Demo?Id={!stu.Id}"/><apex:commandLink value="View" action="https://ibirdssoftwareservices8-dev-ed.lightning.force.com/lightning/r/Student__c/{!stu.Id}/view"/></apex:column>
+                       		<apex:column value="{!stu.First_Name__c}" />
+                            <apex:column value="{!stu.Last_Name__c}" />
+                            <apex:column value="{!stu.Email__c}" />
+                            <apex:column value="{!stu.Date_of_Birth__c}" />
+                            <apex:column value="{!stu.HaveWahicle__c}" />
+                            <apex:column value="{!stu.Sex__c}" />
+                            <apex:column value="{!stu.WifeName__c}" />
+                            <apex:column value="{!stu.Class__c}" />
+                            <apex:column value="{!stu.Married__c}" />
+                            <apex:column value="{!stu.Husband_Name__c}" />
+                            
+                </apex:pageBlockTable>
+                
+                		<apex:pageBlockButtons >
+                            <apex:commandButton action="{!first}" value="First" />
+                            <apex:commandButton action="{!previous}" value="Previous"/>
+                            <apex:commandButton action="{!next}" value="Next"/>
+                            <apex:commandButton action="{!last}" value="Last"/>
+                            
+                            <!--<apex:commandButton action="/apex/Demo" value="New Student"/>-->
+                           
+                		</apex:pageBlockButtons>
+               
+        	</apex:pageBlock>
+    </apex:form>
+</apex:page>

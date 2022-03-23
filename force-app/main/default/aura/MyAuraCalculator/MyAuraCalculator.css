@@ -1,0 +1,29 @@
+.THIS {
+
+}
+
+
+.THIS.labelStyle{
+   
+    font-size:25px;
+    margin:10px;
+    
+}
+.THIS.inputStyle{
+    font-size:25px;
+    margin:10px;
+    Width:25%;
+    
+}
+
+.THIS.inputReadOnly{
+	font-size:25px;
+    margin:10px;
+    Width:25%;
+}
+
+.THIS.buttonStyle{
+    	margin:10px;
+    	Padding:10px;
+        font-size:25px;
+}

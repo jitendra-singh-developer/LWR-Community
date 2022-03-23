@@ -1,0 +1,46 @@
+.boxBorder{
+      
+    border: 3px solid red;
+
+}
+
+.boxPadding{
+padding: 3rem;
+}
+
+.partBox{
+height: 12rem;
+width: 14rem;
+
+
+}
+
+.imgClass{
+    height: 8rem;
+    width: 12rem;
+  
+    border: 1px solid black;
+    border-radius: 10%;
+}
+
+.slds-modal__container {
+    max-width: 60rem !important;
+    width: 80% !important;
+    max-height: 100rem !important;
+    height: 100% !important;
+    }
+
+.appName{
+    margin-top: auto;
+    align-items: center;
+    align-content: center;
+    margin-top: 5%;
+    font-size: small;
+  
+}
+
+.btnClass{
+    align-content: center;
+    background-color: black;
+    border-radius: 25%;
+}

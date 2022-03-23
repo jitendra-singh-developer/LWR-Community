@@ -1,0 +1,13 @@
+<apex:page controller="AccounCountController"  >
+    <apex:form id="id">
+        <apex:actionFunction name="reload" reRender="id" />
+   		<apex:pageBlock >
+                <apex:inputCheckbox label="Select" value="{!isAllow}" onchange="reload();" />
+        		<apex:pageBlockTable value="{!accountCountList}" var="accountObj" >
+            			<apex:column headerValue="Account Name"  value="{!accountObj.accountName.Name}" />
+                    	<apex:column rendered="{!isAllow}" headerValue="Contact Count" value="{!accountObj.accountCount}" />
+            
+            	</apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

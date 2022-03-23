@@ -1,0 +1,28 @@
+<apex:component access="global"  >
+    <apex:attribute name="projectObject" type="Project__c" description="" />
+    <table border="2px" >
+        <tr>
+            <th>Serial No. </th>
+            <th>Project Task Name</th>
+            <th>Created Date</th>
+            <th>Completion Date</th>
+            <th>Completed by </th>
+            
+            
+        </tr>
+        
+        
+        <apex:variable value="{!0}" var="SerialNo" />
+        <apex:repeat value="{!projectObject.Project_Tasks__r}"  var="projectTaskObj" >
+            <tr> <apex:variable value="{!SerialNo + 1}" var="SerialNo" /> 
+                <td> <apex:outputText value="{!SerialNo}"  /> </td>
+                <td> <apex:outputField value="{!projectTaskObj.Type__c}" /> </td>
+                <td> <apex:outputField value="{!projectTaskObj.createdDate}" /> </td>
+                <td>  <apex:outputField value="{!projectTaskObj.Completion_Date__c}" /> </td>
+                <td>  <apex:outputField value="{!projectTaskObj.OwnerId}" /> </td>
+            </tr> 
+        </apex:repeat>
+        
+        
+    </table>
+</apex:component>

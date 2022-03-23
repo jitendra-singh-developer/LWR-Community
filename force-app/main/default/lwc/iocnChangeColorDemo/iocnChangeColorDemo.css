@@ -1,0 +1,46 @@
+.yellow-icon{
+    color: red;
+    background-color: yellow;
+    --slds-c-icon-color-foreground: #bf1616;
+}
+.red-icon{
+    --lwc-colorTextIconDefault: #F62217;
+}
+.blue-icon{
+    --lwc-colorTextIconDefault: #3989c6;
+}
+
+.purple-rocket{
+    --sds-c-icon-color-foreground-default: purple;
+    --sds-c-icon-color-background: pink;
+}
+.green-rocket{
+    --sds-c-icon-color-foreground-default: green;
+    --sds-c-icon-color-background: blue;
+}
+.blue-rocket{
+    --sds-c-icon-color-foreground-default: blue;
+    --sds-c-icon-color-background: green;
+}
+.orange-rocket{
+    --sds-c-icon-color-foreground-default: orange;
+    --sds-c-icon-color-background: black;
+}
+
+
+.purple-world{
+    --sds-c-icon-color-foreground: purple;
+    --sds-c-icon-color-background: pink;
+}
+.green-world{
+    --sds-c-icon-color-foreground: green;
+    --sds-c-icon-color-background: blue;
+}
+.blue-world{
+    --sds-c-icon-color-foreground: blue;
+    --sds-c-icon-color-background: green;
+}
+.orange-world{
+    --sds-c-icon-color-foreground: orange;
+    --sds-c-icon-color-background: black;
+}

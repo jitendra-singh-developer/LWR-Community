@@ -1,0 +1,22 @@
+<!-- <template>
+    <img  src={url} allowfullscreen height={myheight} width={mywidth} >
+    <audio style="
+    position: relative;
+    right: 54rem;
+    top: -24rem;
+" controls="controls" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3">Play Song</audio>
+
+</template> -->
+<template>
+    <lightning-card  title="Refresh Lightning web component">
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="text" name="input2" label="Enter Value" value={selectedValue} onchange={handleChange}></lightning-input>
+
+            Entered Value : {selectedValue}
+        </p>
+        <p slot="footer">
+            <lightning-button label="Refresh" onclick={refreshComponent}>Refresh Video</lightning-button>
+        </p>
+        
+    </lightning-card>
+</template>

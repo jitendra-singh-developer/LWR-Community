@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable" >
+    <div>
+        <c:HeaderComponent tagLine="Beer Explorer" message="Hey , Get a beer for me in a nice manner !" />
+    </div>
+    <div>
+        <c:BeerSearch />
+    </div>
+	
+</aura:component>

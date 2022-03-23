@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <lightning-input type="checkbox"
+                label="Select"
+                checked = {isChecked}
+                onclick = {checkedClick}
+
+                >
+            </lightning-input>
+          
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                   
+                    <th scope="col"> Account Name </th>
+                    <th scope="col" if:true={isChecked} > Contact Count  </th>
+                
+                </tr>
+            </thead>
+            <tbody >
+                <template  for:each= {accountListObj} for:item='acc'>
+                <tr class="slds-hint-parent" key={acc.accountObject.Id}  >
+                    <td scope="row"> {acc.accountObject.Name} </td>
+                    <td scope="row" if:true={isChecked}> {acc.accountCount} </td>
+                    
+                </tr>
+            </template>
+            </tbody>
+        </table>
+
+    </lightning-card>
+</template>

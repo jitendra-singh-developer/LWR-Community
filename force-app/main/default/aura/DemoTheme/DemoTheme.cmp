@@ -1,0 +1,16 @@
+<aura:component implements="forceCommunity:themeLayout,forceCommunity:profileMenuInterface" extends="forceCommunity:navigationMenuBase">
+    <aura:attribute name="search" type="Aura.Component[]"/>
+    <aura:attribute name="sidebarFooter" type="Aura.Component[]"/>
+           
+ 	    <aura:attribute name="options" type="String[]" default="Home, My Profile , My Messages , My Options ,Dashboards ,Settings ,LogOut"/>
+
+        <ui:menuTriggerLink aura:id="trigger" label="Profile Menu"/>
+        <ui:menuList class="actionMenu" aura:id="actionMenu">
+            <aura:iteration items="{!v.options}" var="itemLabel">
+                <ui:actionMenuItem label="{!itemLabel}" click="{!c.handleClick}"/>
+            </aura:iteration>
+        </ui:menuList>
+ 
+     <aura:attribute name="navigationLinkSetId" type="String" default="My_Custom_Navigation" />
+
+</aura:component>

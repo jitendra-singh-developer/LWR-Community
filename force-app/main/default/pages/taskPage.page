@@ -1,0 +1,23 @@
+<apex:page standardController="Contact" extensions="AssignTaskContactController">
+    <apex:form >
+        <apex:pageBlock title="Activity History">
+             <apex:commandButton action="/apex/ContactDetailPage" value="Back" />
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockTable value="{!ListTasks}" var="tsk">
+                    <apex:column ><input type="checkbox" value="{!tsk.Id}" name="{!tsk.Id}"/> </apex:column>
+                    <apex:column headerValue="Contact" value="{!tsk.WhoId}"/>
+                    <apex:column headerValue="Subject" value="{!tsk.Subject}"/>
+                    <apex:column headerValue="Status" value="{!tsk.Status}"/>
+                    <apex:column headerValue="Related" value="{!tsk.WhatId}"/>
+                    
+                    <apex:column headerValue="Modified Date" value="{!tsk.LastModifiedDate}"/>
+                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection> 
+            <apex:pageBlockButtons >
+            	<apex:commandButton action="{!assign}" value="Save" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

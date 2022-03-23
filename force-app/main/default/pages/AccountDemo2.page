@@ -1,0 +1,89 @@
+<apex:page title="Account" standardController="Account">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Account Detail" collapsible="false">
+                <apex:outputField value="{!Account.OwnerId}"  />
+                <apex:outputField value="{!Account.Rating}"/>
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.Phone}"/>
+                <apex:outputField value="{!Account.ParentId}"/>
+                <apex:outputField value="{!Account.Fax}"/>
+                <apex:outputField value="{!Account.AccountNumber}"/>
+                <apex:outputField value="{!Account.Website}"/>
+                <apex:outputField value="{!Account.Site}"/>
+                <apex:outputField value="{!Account.TickerSymbol}"/>
+                <apex:outputField value="{!Account.Type}"/>
+                <apex:outputField value="{!Account.OwnerShip}"/>
+                <apex:outputField value="{!Account.Industry}"/>
+                <apex:outputField value="{!Account.NumberOfEmployees}"/>
+                <apex:outputField value="{!Account.AnnualRevenue}"/>
+                <apex:outputField value="{!Account.Sic}"/>
+                <apex:outputfield value="{!Account.CustomerPriority__c}"/>
+                <apex:outputfield value="{!Account.SLA__c}"/>
+                <apex:outputfield value="{!Account.SLAExpirationDate__c}"/>
+                <apex:outputfield value="{!Account.SLASerialNumber__c}"/>
+                <apex:outputfield value="{!Account.NumberofLocations__c}"/>
+                <apex:outputfield value="{!Account.UpsellOpportunity__c}"/>
+                <apex:outputfield value="{!Account.Active__c}"/>
+                <apex:outputfield value="{!Account.CreatedById}"/>
+                <apex:outputfield value="{!Account.LastModifiedById}"/>
+                <apex:outputfield value="{!Account.Description}"/>
+                
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="/apex/Demo2" value="Edit" />
+                <apex:commandButton action="/apex/Demo" value="Delete"/>
+                <apex:commandButton action="/apex/StudentList" value="Sharing" />
+                <apex:commandButton action="/apex/StudentList2" value="Include Offline" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+        <apex:sectionHeader title="Contact" />
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageblocktable value="{!Account.Contacts}" var="cn">
+                    <apex:column value="{!cn.Name}" />
+                    <apex:column value="{!cn.Title}" />
+                    <apex:column value="{!cn.Email}" />
+                    <apex:column value="{!cn.Phone}" />
+                    
+                </apex:pageblocktable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:sectionHeader title="Opportunities" />
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageblocktable value="{!Account.Opportunities}" var="cn">
+                    <apex:column value="{!cn.Name}" />
+                    <apex:column value="{!cn.StageName}" />
+                    <apex:column value="{!cn.Amount}" />
+                    
+                    
+                </apex:pageblocktable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:sectionHeader title="Attachements" />
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:pageblocktable value="{!Account.Attachments}" var="cn">
+                    <apex:column value="{!cn.Name}" />
+                    <apex:column value="{!cn.ContentType}" />
+                    <apex:column value="{!cn.IsPrivate}" />
+                    <apex:column headerValue="Description"><img src="/servlet/servlet.FileDownload?file={!cn.Id}" height="30px"/></apex:column>
+                      <apex:column headerValue="Image Tag"><apex:image url="/servlet/servlet.FileDownload?file={!cn.Id}" height="30px" width="30px" /></apex:column>
+                    <apex:column headerValue="Image "><apex:image value="/servlet/servlet.FileDownload?file={!cn.Id}" height="30px" width="30px" /></apex:column>
+                </apex:pageblocktable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+    
+</apex:page>

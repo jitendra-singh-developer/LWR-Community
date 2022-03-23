@@ -1,0 +1,39 @@
+<apex:page controller="StudentDomController"  >
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock >
+            
+            <apex:variable value="{!0}" var="sno" />
+            <apex:pageBlockTable value="{!students}" var="stu">
+                <apex:column headerValue="Select" ><input type="checkbox" value="{!stu.Id}" name="{!stu.Id}"  /></apex:column>
+                <apex:column headerValue="S.No" > <apex:variable value="{!sno+1}" var="sno" /><apex:outputText value="{!sno}" /> </apex:column>
+                <apex:column headerValue="First Name" ><apex:inputField value="{!stu.First_Name__c}" /></apex:column>
+                <apex:column headerValue="Last Name" ><apex:inputField value="{!stu.Last_Name__c}" required="false" /></apex:column>
+                <apex:column headerValue="Date of Birth" ><apex:inputField value="{!stu.Date_of_Birth__c}" /></apex:column>
+                <apex:column headerValue="Email" ><apex:inputField value="{!stu.Email__c}"  /></apex:column>
+                <apex:column headerValue="Have Vahicle"><apex:inputField value="{!stu.HaveWahicle__c}" /></apex:column>
+                <apex:column headerValue="Sex" ><apex:inputField value="{!stu.Sex__c}" /></apex:column>
+                <apex:column headerValue="Class" ><apex:inputField value="{!stu.Class__c}"  required="false" /></apex:column>
+                <apex:column headerValue="Married" ><apex:inputField value="{!stu.Married__c}" /></apex:column>
+                <apex:column headerValue="Wife Name" ><apex:inputField value="{!stu.WifeName__c}" /></apex:column>
+                <apex:column headerValue="Husband Name" ><apex:inputField value="{!stu.Husband_Name__c}" /></apex:column>
+                
+                
+                
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+                
+                <apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton immediate="true" value="Add Row" action="{!addRow}" />
+                <apex:commandButton value="Remove Row" action="{!removeRow}" />
+                <apex:commandButton immediate="true" value="Clear List" action="{!clearList}" />
+                
+                
+            </apex:pageBlockButtons>            
+            
+            
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

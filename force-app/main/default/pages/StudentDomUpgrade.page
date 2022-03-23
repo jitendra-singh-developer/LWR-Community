@@ -1,0 +1,50 @@
+<apex:page controller="StudentDomUpgradeController"  >
+    <apex:form >
+  
+        <apex:pageBlock >
+          
+      
+              
+
+			           
+            <apex:pageBlockTable value="{!studentModels}" var="cm">
+                
+                <apex:column headerValue="Image ">
+                    <apex:image value="/servlet/servlet.FileDownload?file={!cm.attach.Id}" rendered="{!cm.isImage}"  height="30px" width="30px" /> 
+                    <apex:image value="{!$Resource.Jitendrasingh}" height="30px" width="30px" rendered="{!!cm.isImage}" />
+                </apex:column>
+             
+                <apex:column headerValue="Select" ><apex:inputCheckbox value="{!cm.isChecked}" /></apex:column>
+                <apex:column headerValue="S.No" ><apex:outputText value="{!cm.srNO}"></apex:outputText></apex:column>
+                <apex:column headerValue="First Name" ><apex:inputField value="{!cm.con.First_Name__c}" /></apex:column>
+                <apex:column headerValue="Last Name" ><apex:inputField value="{!cm.con.Last_Name__c}" required="false" /></apex:column>
+                <apex:column headerValue="Date of Birth" ><apex:inputField value="{!cm.con.Date_of_Birth__c}" /></apex:column>
+                <apex:column headerValue="Email" ><apex:inputField value="{!cm.con.Email__c}"  /></apex:column>
+                <apex:column headerValue="Have Vahicle"><apex:inputField value="{!cm.con.HaveWahicle__c}" /></apex:column>
+                <apex:column headerValue="Sex" ><apex:inputField value="{!cm.con.Sex__c}" /></apex:column>
+                <apex:column headerValue="Class" ><apex:inputField value="{!cm.con.Class__c}"  required="false" /></apex:column>
+                <apex:column headerValue="Married" ><apex:inputField value="{!cm.con.Married__c}" /></apex:column>
+                <apex:column headerValue="Wife Name" ><apex:inputField value="{!cm.con.WifeName__c}" /></apex:column>
+                <apex:column headerValue="Husband Name" ><apex:inputField value="{!cm.con.Husband_Name__c}" /></apex:column>
+                <apex:column headerValue="Attach File" >
+                    <apex:inputFile value="{!cm.attachment.body}" filename="{!cm.attachment.name}" />
+                </apex:column>
+                
+                
+                
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            
+            	<apex:commandButton value="Save" action="{!save}" />
+                <apex:commandButton value="Add Row" action="{!addRow}" />
+            
+            
+            </apex:pageBlockButtons>
+
+            
+            
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

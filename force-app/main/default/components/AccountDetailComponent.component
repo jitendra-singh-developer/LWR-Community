@@ -1,0 +1,10 @@
+<apex:component controller="AccountDetailController" >
+  
+    <apex:attribute name="objectName" description="" type="String" AssignTo="{!accountId}" />
+
+     <apex:pageBlockSection title="Account Detail">
+			<apex:outputField value="{!AccountObj.Name}" />  
+         	<apex:outputField value="{!AccountObj.Email__c}" />
+          <apex:outputField value="{!AccountObj.Phone}" />
+    </apex:pageBlockSection>
+</apex:component>

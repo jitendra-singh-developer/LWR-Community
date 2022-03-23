@@ -1,0 +1,104 @@
+<apex:page controller="SearchContactsController" lightningStylesheets="true" title="Search Contacts"  >
+    <apex:sectionHeader title="Contacts" subtitle="Search"  />
+    <apex:form >
+        
+        
+        <apex:inputText value="{!searchValue}" />
+        <apex:commandButton action="{!searchRecords}" reRender="frm"  value="Search" style="margin-left:10px" status="loadData" />
+        <apex:actionStatus id="loadData" startText="Searching..." startStyle="margin-left:10px" /><br/><br/>
+        
+        
+        <apex:actionFunction name="changeSize" action="{!changeSize}"  reRender="frm" status="changePageSize" />
+        <apex:pageBlock id="frm"  >
+            
+            Select Type  <apex:selectList value="{!selectedType}" size="1"  style="margin-left:10px" >
+            <apex:selectOptions value="{!selectList}"/>
+            </apex:selectList>
+            <apex:commandButton value="Save" action="{!save}" />
+            
+            
+            
+            
+            
+            <apex:outputPanel style="float:right" >
+                
+                <apex:outputPanel style="margin-right:10px" >
+                    Page Size 
+                </apex:outputPanel>
+                
+                <apex:selectList value="{!pageSize}" size="1" onchange="changeSize();"  >
+                    <apex:selectOptions value="{!pageSizeList}"/>
+                </apex:selectList>
+            </apex:outputPanel>
+            
+            <apex:outputPanel style=" float:right; margin-top:6px; margin-right:10px"   >
+                <apex:actionStatus id="changePageSize"  >
+                    <apex:facet name="start" >
+                        <apex:image value="{!$Resource.changePageStutas}"  height="20" width="20" />
+                    </apex:facet>
+                </apex:actionStatus>
+                
+            </apex:outputPanel> 
+            
+            
+            <br/><br/>
+            
+            <apex:pageMessages ></apex:pageMessages>  
+            <apex:pageBlockTable value="{!showContactModelList}"   var="con">
+                <apex:column headerValue="Action" >
+                    <apex:inputCheckbox value="{!con.isChecked}" style="margin-left:20px;" />
+                </apex:column>
+                <apex:column value="{!con.contactRecord.Name}" >
+                    <apex:facet name="header">
+                        
+                        <apex:commandLink value="Name {!if(FieldName == 'Name',if(orderName == 'ASC','▼','▲'),' ')} " action="{!sortList}"  reRender="frm" style="color:black" >
+                            <apex:param assignTo="{!fieldName}" name="fieldName" value="Name" />
+                        </apex:commandLink>
+                        
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!con.contactRecord.Email}" >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Email {!if(FieldName == 'Email',if(orderName == 'ASC','▼','▲'),' ')}" action="{!sortList}" reRender="frm" style="color:black" >
+                            <apex:param assignTo="{!fieldName}" name="fieldName" value="Email" />
+                        </apex:commandLink>
+                        
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!con.contactRecord.Account.Name}" >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Account Name{!if(FieldName == 'Account.Name',if(orderName == 'ASC','▼','▲'),' ')}" action="{!sortList}" reRender="frm" style="color:black" >
+                            <apex:param assignTo="{!fieldName}" name="fieldName" value="Account.Name" />
+                        </apex:commandLink>
+                        
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!con.contactRecord.Phone}" >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Phone {!if(FieldName == 'Phone',if(orderName == 'ASC','▼','▲'),' ')}" action="{!sortList}" reRender="frm" style="color:black" >
+                            <apex:param assignTo="{!fieldName}" name="fieldName" value="Phone" />
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!con.contactRecord.Type__c}" >
+                    <apex:facet name="header">
+                        <apex:commandLink value="Type {!if(FieldName == 'Type__c',if(orderName == 'ASC','▼','▲'),' ')}" action="{!sortList}" reRender="frm" style="color:black" >
+                            <apex:param assignTo="{!fieldName}" name="fieldName" value="Type__c" />
+                        </apex:commandLink>
+                    </apex:facet>
+                </apex:column>
+                <apex:column headerValue="Detail" ><apex:commandLink value="Detail" action="{!detail}" /></apex:column>
+            </apex:pageBlockTable>
+            <br/>
+            <apex:outputPanel style="float:right" >
+                <apex:commandButton value="|<" action="{!first}" />
+                <apex:commandButton value="<" action="{!previous}" />
+                <apex:commandButton value=">" action="{!next}" />
+                <apex:commandButton value=">|" action="{!last}" />            
+                
+            </apex:outputPanel>
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

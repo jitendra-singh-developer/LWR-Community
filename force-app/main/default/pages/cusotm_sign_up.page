@@ -1,0 +1,20 @@
+<apex:page controller="CustomSignUpController" lightningStylesheets="true" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!contactObj.FirstName}" />
+                <apex:inputField value="{!contactObj.LastName}" />
+                <apex:inputField label="Username" value="{!contactObj.Email}" />
+                <apex:inputField value="{!contactObj.Phone}" />
+                <apex:inputField value="{!contactObj.Birthdate}" />
+                <apex:inputField value="{!contactObj.Password__c}" />
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Sign Up" action="{!signUp}" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

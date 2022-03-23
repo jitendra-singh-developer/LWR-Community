@@ -1,0 +1,23 @@
+<apex:page controller="BulkInsertBookingController">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!bookings}" var="book">
+                <apex:column headerValue="Costomer" ><apex:inputField value="{!book.Customer__c}" /></apex:column>
+                <apex:column headerValue="Room No" ><apex:inputField value="{!book.Room_No__c}" /></apex:column> 
+            	 <apex:column headerValue="Status" ><apex:inputField value="{!book.Status__c}" /></apex:column>
+                   <apex:column headerValue="Check In Time" ><apex:inputField value="{!book.Check_In_Time__c}" /></apex:column>
+                 <apex:column headerValue="Check out Time" ><apex:inputField value="{!book.Check_out_Time__c}" /></apex:column>
+              
+                 <apex:column headerValue="Booking Name" ><apex:inputField value="{!book.Name}" /></apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            
+                <apex:commandButton action="{!save}" value="Save" />
+            
+                
+            </apex:pageBlockButtons>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

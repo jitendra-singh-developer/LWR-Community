@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="NumberA" type="Integer" />
+    <aura:attribute name="NumberB" type="Integer" />
+    <aura:attribute name="Result" type="Integer" />
+    <aura:attribute name="NumList" type="List" default="[1,2,3,4,5,6,7,8,9,10,15,20,25,30]" />
+    
+    
+    <label class="labelStyle" >Enter Number 1</label>
+    <lightning:input  class="inputStyle" name="Input1" type="Number" value="{!v.NumberA}" variant="label-hidden" required="true" />
+    <label class="labelStyle" >Enter Number 2</label>
+    <lightning:input  class="inputStyle" name="Input2" type="Number" value="{!v.NumberB}" variant="label-hidden" required="true" />
+    <label class="labelStyle" >Result</label>
+    <div  class="inputReadOnly" >{!v.Result}</div>
+    
+    <lightning:button  class="buttonStyle" variant="Brand" Value="Component Result" label="Add"  onclick="{!c.handleAdd }"/>
+    <lightning:button class="buttonStyle" variant="Brand" Value="Component Result" label="Sub"  onclick="{!c.handleSub }"/>
+    <lightning:button class="buttonStyle" variant="Brand" Value="Component Result" label="Multi"  onclick="{!c.handleMulti }"/>
+    <lightning:button class="buttonStyle" variant="Brand" Value="Component Result" label="Division"  onclick="{!c.handleDivision }"/>
+    
+    <br/>
+    <aura:iteration var="item" items="{!v.NumList}" >
+    {!item}
+    </aura:iteration>
+    
+    
+    
+    
+</aura:component>

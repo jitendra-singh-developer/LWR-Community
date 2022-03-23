@@ -1,0 +1,30 @@
+<apex:page standardController="Contact" extensions="ImageProfileController" >
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock >
+            
+            
+            <apex:image value="/servlet/servlet.FileDownload?file={!attId}" height="80px" width="80px" />
+            
+            
+            <apex:inputFile contentType="{!attachment.contentType}" value="{!attachment.body}" filename="{!attachment.name}" />
+            
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!upload}" />
+            </apex:pageBlockButtons>
+            
+            
+        </apex:pageBlock>
+            <script>
+            if("{!attachment.ParentId}" != "")
+            {
+                
+                window.parent.location.href="/{!attachment.ParentId}"
+            }I
+            
+            </script>
+            
+        </apex:form>
+        
+    </apex:page>
