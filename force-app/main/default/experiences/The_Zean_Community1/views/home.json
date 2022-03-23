@@ -1,0 +1,79 @@
+{
+  "appPageId" : "f6c02372-144f-4ecd-a5c6-5b15bd2a08fc",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "id" : "c007aef3-36fe-4858-9089-18ca0593a826",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"a4154396-1941-4594-a880-e7c66cf1f7ec\",\"columns\":[{\"UUID\":\"a3cc59cd-f51d-4c53-8432-63224645e96d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":null},{\"UUID\":\"6feecad6-41d4-421f-a84d-54337ecb853b\",\"columnName\":\"Column 2\",\"columnKey\":\"77363\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"b0181f00-7d48-4d42-ad11-adde83878b51\",\"columnName\":\"Column 3\",\"columnKey\":\"1f38d\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"2cccf8e5-3d46-46a1-ae30-b1a18825b1c0\",\"columnName\":\"Column 4\",\"columnKey\":\"2abc1\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "a4154396-1941-4594-a880-e7c66cf1f7ec",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<div>Jitendra Singh</div>"
+          },
+          "componentName" : "community_builder:htmlEditor",
+          "id" : "3b0f6130-7d31-4747-90db-c9b1669f2d89",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "a3cc59cd-f51d-4c53-8432-63224645e96d",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "6feecad6-41d4-421f-a84d-54337ecb853b",
+        "regionLabel" : "Column 2",
+        "regionName" : "77363",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "b0181f00-7d48-4d42-ad11-adde83878b51",
+        "regionLabel" : "Column 3",
+        "regionName" : "1f38d",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "2cccf8e5-3d46-46a1-ae30-b1a18825b1c0",
+        "regionLabel" : "Column 4",
+        "regionName" : "2abc1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "22005e52-e1ac-4efd-b7e5-0f52192ec6c4",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Home",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "4547051a-ed12-4518-8e54-fb16c985117f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7756cd51-de7d-4daf-a2f3-b730d41d6fdd",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

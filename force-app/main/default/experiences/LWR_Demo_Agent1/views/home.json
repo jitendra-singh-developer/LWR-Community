@@ -1,0 +1,92 @@
+{
+  "appPageId" : "a33c9136-d66d-4d42-8731-3ea48cc00e8f",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "id" : "4d8ff5f0-7077-4c24-a1ef-4ea91e2953e3",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "sectionConfig" : "{\"UUID\":\"8f5c4a71-ce52-48e7-955a-5ae6c1b0a50e\",\"columns\":[{\"UUID\":\"b2bea078-d6be-4032-97b1-0404cf82f809\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "8f5c4a71-ce52-48e7-955a-5ae6c1b0a50e",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "alignment" : "center",
+            "fit" : "contain",
+            "height" : 350,
+            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb6%2FImage_created_with_a_mobile_phone.png%2F1200px-Image_created_with_a_mobile_phone.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FImage&tbnid=gxFxsvFBmxeZ9M&vet=12ahUKEwiA4ae3i-X1AhVji9gFHWSNDBkQMygAegUIARDSAQ..i&docid=0JWe7yDOKrVFAM&w=1200&h=900&q=image&ved=2ahUKEwiA4ae3i-X1AhVji9gFHWSNDBkQMygAegUIARDSAQ\",\"altText\":\"image\",\"contentKey\":\"\"}}",
+            "overlayColor" : "",
+            "position" : "center center",
+            "width" : 56
+          },
+          "componentName" : "dxp_base:image",
+          "id" : "6ec0da89-803b-4d65-bace-a56e7f961ffb",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "alignment" : "left",
+            "fit" : "cover",
+            "height" : 124,
+            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/media/5OU5g000000clnA/source?cb=05T5g00000FwRE4&height=144&width=192\",\"altText\":\"\",\"contentKey\":\"MCQ35TLWNHJFHODAAX7DABH37F7M\"}}",
+            "overlayColor" : "rgba(152, 102, 102, 0.01)",
+            "position" : "top left",
+            "width" : 72
+          },
+          "componentName" : "dxp_base:image",
+          "id" : "53c9b6e6-10ec-4391-b691-7a15f65c18e3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "detailPage" : "LeadsDetail__c",
+            "listView" : "All",
+            "object" : "LWR_Demo_Lead__c",
+            "showListViewLabel" : true
+          },
+          "componentName" : "demo25:recordList",
+          "id" : "1ac74960-f0ce-421a-8062-6b5d4866b943",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "b2bea078-d6be-4032-97b1-0404cf82f809",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "8fb4e6d5-158a-4fcb-aae9-2f1352115b4f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Agent Portal",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "c643cdfc-b680-42a3-bf16-111fafdb2778",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "76ca22b1-6df9-475a-b092-63a510142816",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "qPPEyltdmAFdHizUuYfgzQ1rAzXqzy",
+  "type" : "view",
+  "viewType" : "home"
+}

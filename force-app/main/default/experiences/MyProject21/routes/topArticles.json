@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "e2e8bc47-3009-47aa-b901-29506101d275",
+  "appPageId" : "a17ee460-0756-48d5-83db-5170d7ad8924",
+  "configurationTags" : [ ],
+  "id" : "6d3f123f-01c1-4c10-bc00-293f580feac4",
+  "label" : "Top Articles",
+  "pageAccess" : "UseParent",
+  "routeType" : "top-articles",
+  "type" : "route",
+  "urlPrefix" : "comm-my-account/testdeom"
+}

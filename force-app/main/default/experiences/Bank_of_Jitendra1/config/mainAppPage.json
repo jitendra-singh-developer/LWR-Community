@@ -1,0 +1,10 @@
+{
+  "cmsSettings" : { },
+  "currentThemeId" : "1ff06dd4-3093-44bf-ac07-9f4673857dfa",
+  "headMarkup" : "<script>\n    window.onload = function() {\n        document.getElementsByClassName(\"logoImage\")[0].addEventListener(\"click\",function() {\n            location.href = \"https://www.google.com\"; \n        });\n    }\n</script>",
+  "id" : "7b7a8aa4-448d-4ac1-b227-d0846a73e712",
+  "isRelaxedCSPLevel" : true,
+  "label" : "main",
+  "templateName" : "Service Community Template",
+  "type" : "appPage"
+}

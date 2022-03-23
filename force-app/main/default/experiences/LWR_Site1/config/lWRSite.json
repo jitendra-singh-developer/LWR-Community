@@ -1,0 +1,23 @@
+{
+  "authenticationType" : "AUTHENTICATED_WITH_PUBLIC_ACCESS_ENABLED",
+  "forgotPasswordRouteId" : null,
+  "isFilteredComponentsView" : true,
+  "isProgressiveRenderingEnabled" : false,
+  "mainAppPageId" : "f0a09363-2065-4207-be5d-0460de0d0690",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : null,
+  "trustedSitesForScript" : [ {
+    "id" : "25b7bfdf-0b17-441f-9a72-195a80a52647",
+    "isActive" : false,
+    "trustedSiteName" : "youtube",
+    "trustedSiteUrl" : "https://youtube.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "7d2bcb96-a509-4c4b-8a52-4ea101e7b9f5",
+    "isActive" : true,
+    "trustedSiteName" : "you",
+    "trustedSiteUrl" : "https://youtu.be",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

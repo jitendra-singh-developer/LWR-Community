@@ -1,0 +1,54 @@
+{
+  "appPageId" : "7b7a8aa4-448d-4ac1-b227-d0846a73e712",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "f611ec39-550a-43b3-9082-d1008160f506",
+  "label" : "MyProfile",
+  "regions" : [ {
+    "id" : "30bf4e88-e12b-4081-8cea-4eb2015c2d30",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "knowledgeableAboutTitle" : "Knows About",
+        "maxTopics" : 5,
+        "showFullPhotoAsCircle" : true,
+        "showKnowledgeableAbout" : false,
+        "showPhoto" : true,
+        "showReputationInInfluenceCard" : false,
+        "showStats" : false,
+        "userId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:userProfileBody",
+      "id" : "8c8d88b0-ae41-4e72-bca3-920e3be7d3ab",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4440f910-8e42-4e0b-85c0-d42e982bd10e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "74d48fd2-6059-49d0-9577-afa846d7531f",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "MyProfile"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "96b6ae98-f003-4a7b-b7e7-e9bcc4ca8761",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "24e1bb1e-5837-4dda-b70c-e80314e84ace",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-myprofile"
+}

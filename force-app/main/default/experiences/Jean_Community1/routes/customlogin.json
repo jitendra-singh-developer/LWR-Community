@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "bda88dc7-0a71-4681-85db-6e8ab41cd1b0",
+  "appPageId" : "cfbb32b6-c791-4f6f-bfb1-1972e54f4a03",
+  "configurationTags" : [ ],
+  "id" : "0c76f70c-2832-4210-a2a3-20728a22335b",
+  "label" : "customlogin",
+  "pageAccess" : "Public",
+  "routeType" : "custom-customlogin",
+  "type" : "route",
+  "urlPrefix" : "customlogin"
+}

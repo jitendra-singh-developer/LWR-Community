@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "70a0a2c1-b8eb-42c6-9c16-2bf6924827ae",
+  "appPageId" : "cfbb32b6-c791-4f6f-bfb1-1972e54f4a03",
+  "configurationTags" : [ ],
+  "id" : "e68f1996-ab0e-4104-8331-4b443fc363f8",
+  "label" : "SBTestPage",
+  "pageAccess" : "RequiresLogin",
+  "routeType" : "custom-sbtestpage",
+  "type" : "route",
+  "urlPrefix" : "sbtestpage"
+}

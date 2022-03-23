@@ -1,0 +1,42 @@
+{
+  "forgotPasswordRouteId" : "664b357f-7552-4922-8733-e05fbd9c4328",
+  "isAvailableToGuests" : true,
+  "isFilteredComponentsView" : true,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "85e4d541-0aef-4caa-8de0-88d2fff12110",
+  "mainAppPageId" : "cfbb32b6-c791-4f6f-bfb1-1972e54f4a03",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : "7c2d0bd3-6e2e-4bde-ba1c-4554bee042e9",
+  "trustedSitesForScript" : [ {
+    "id" : "702f8d7a-af79-42f7-9939-6682ef555f81",
+    "isActive" : true,
+    "trustedSiteName" : "Excel",
+    "trustedSiteUrl" : "https://adminfinance.umw.edu",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "6a230956-d4c7-4a11-9071-7493b36312f4",
+    "isActive" : true,
+    "trustedSiteName" : "SLDS",
+    "trustedSiteUrl" : "https://www.lightningdesignsystem.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "f70886fa-f4ee-41a1-a9d7-202fe5c88782",
+    "isActive" : true,
+    "trustedSiteName" : "YOU",
+    "trustedSiteUrl" : "https://www.youtube.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "a10c0ab6-1821-45e6-9ace-6757fda35fa0",
+    "isActive" : true,
+    "trustedSiteName" : "Soundtrack",
+    "trustedSiteUrl" : "https://www.soundhelix.com",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "8be99277-51dc-4218-a3e6-12b6b758f4f2",
+    "isActive" : true,
+    "trustedSiteName" : "unsplash",
+    "trustedSiteUrl" : "https://unsplash.com",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

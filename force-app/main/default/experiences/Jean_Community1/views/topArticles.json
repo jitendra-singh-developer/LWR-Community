@@ -1,0 +1,50 @@
+{
+  "appPageId" : "cfbb32b6-c791-4f6f-bfb1-1972e54f4a03",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "f919cf85-8b7c-4fbb-818c-17e9046774e8",
+  "label" : "Top Articles",
+  "regions" : [ {
+    "id" : "3ca49f60-89bf-496f-9ad4-199c79e1f112",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "numberOfArticles" : 5,
+        "showTitle" : true,
+        "title" : "Top Articles",
+        "topicList" : [ ]
+      },
+      "componentName" : "forceCommunity:topArticleList",
+      "id" : "1fba4971-884e-49c6-8c7b-694e775418c5",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9cac01f1-568f-4b1b-85b5-82bb5028cb95",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "90b848fd-4e29-4bef-988c-71c053676f66",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Top Articles"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8571f5cf-8e7a-4e9a-ae6f-b68c1afdf42b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "faf6bfab-0c25-49d6-ad75-c196811fe36a",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "top-articles"
+}

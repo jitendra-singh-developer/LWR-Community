@@ -1,0 +1,37 @@
+{
+  "appPageId" : "a17ee460-0756-48d5-83db-5170d7ad8924",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "e2e8bc47-3009-47aa-b901-29506101d275",
+  "label" : "Hello Top",
+  "regions" : [ {
+    "id" : "1783a579-0879-4212-97df-b6fa2fbbc03b",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "44cf4ca3-5b93-4800-95df-14a237c9965e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "d38aa6a7-50b8-4733-9af0-8b158dab063a",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "test demo"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "a1a3cf3f-a5e5-4d46-b6c8-7d3a0f88b918",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ae3481b6-91d8-4b18-b4c0-ddb1ab3b1580",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "top-articles"
+}

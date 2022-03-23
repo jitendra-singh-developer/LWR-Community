@@ -1,0 +1,17 @@
+{
+  "authenticationType" : "AUTHENTICATED",
+  "forgotPasswordRouteId" : "4c888e51-01e0-4eed-9d02-4763e28ab204",
+  "isFilteredComponentsView" : true,
+  "isProgressiveRenderingEnabled" : false,
+  "mainAppPageId" : "a33c9136-d66d-4d42-8731-3ea48cc00e8f",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : null,
+  "trustedSitesForScript" : [ {
+    "id" : "b7ab4c3e-57c4-4f55-94c6-205ffe42d799",
+    "isActive" : true,
+    "trustedSiteName" : "google",
+    "trustedSiteUrl" : "https://www.google.com/imgres",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}
